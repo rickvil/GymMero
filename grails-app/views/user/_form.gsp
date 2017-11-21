@@ -2,12 +2,12 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'username', 'error')} required">
-	<label for="username">
-		<g:message code="user.username.label" default="Username" />
+<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'dni', 'error')} required">
+	<label for="dni">
+		<g:message code="user.dni.label" default="Dni" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="username" required="" value="${userInstance?.username}"/>
+	<g:textField name="dni" required="" value="${userInstance?.dni}"/>
 
 </div>
 
@@ -29,30 +29,21 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'birthday', 'error')} ">
+	<label for="birthday">
+		<g:message code="user.birthday.label" default="Birthday" />
+		
+	</label>
+	<g:datePicker name="birthday" precision="day"  value="${userInstance?.birthday}" default="none" noSelection="['': '']" />
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: userInstance, field: 'password', 'error')} ">
 	<label for="password">
 		<g:message code="user.password.label" default="Password" />
 		
 	</label>
 	<g:field type="password" name="password" value="${userInstance?.password}"/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'address', 'error')} ">
-	<label for="address">
-		<g:message code="user.address.label" default="Address" />
-		
-	</label>
-	<g:textField name="address" value="${userInstance?.address}"/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'email', 'error')} ">
-	<label for="email">
-		<g:message code="user.email.label" default="Email" />
-		
-	</label>
-	<g:field type="email" name="email" maxlength="50" value="${userInstance?.email}"/>
 
 </div>
 

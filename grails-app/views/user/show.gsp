@@ -23,11 +23,11 @@
 			</g:if>
 			<ol class="property-list user">
 			
-				<g:if test="${userInstance?.username}">
+				<g:if test="${userInstance?.dni}">
 				<li class="fieldcontain">
-					<span id="username-label" class="property-label"><g:message code="user.username.label" default="Username" /></span>
+					<span id="dni-label" class="property-label"><g:message code="user.dni.label" default="Dni" /></span>
 					
-						<span class="property-value" aria-labelledby="username-label"><g:fieldValue bean="${userInstance}" field="username"/></span>
+						<span class="property-value" aria-labelledby="dni-label"><g:fieldValue bean="${userInstance}" field="dni"/></span>
 					
 				</li>
 				</g:if>
@@ -50,29 +50,20 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${userInstance?.birthday}">
+				<li class="fieldcontain">
+					<span id="birthday-label" class="property-label"><g:message code="user.birthday.label" default="Birthday" /></span>
+					
+						<span class="property-value" aria-labelledby="birthday-label"><g:formatDate date="${userInstance?.birthday}" /></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${userInstance?.password}">
 				<li class="fieldcontain">
 					<span id="password-label" class="property-label"><g:message code="user.password.label" default="Password" /></span>
 					
 						<span class="property-value" aria-labelledby="password-label"><g:fieldValue bean="${userInstance}" field="password"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${userInstance?.address}">
-				<li class="fieldcontain">
-					<span id="address-label" class="property-label"><g:message code="user.address.label" default="Address" /></span>
-					
-						<span class="property-value" aria-labelledby="address-label"><g:fieldValue bean="${userInstance}" field="address"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${userInstance?.email}">
-				<li class="fieldcontain">
-					<span id="email-label" class="property-label"><g:message code="user.email.label" default="Email" /></span>
-					
-						<span class="property-value" aria-labelledby="email-label"><g:fieldValue bean="${userInstance}" field="email"/></span>
 					
 				</li>
 				</g:if>
