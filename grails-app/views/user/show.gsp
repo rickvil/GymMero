@@ -8,91 +8,132 @@
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#show-user" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
-		<div id="show-user" class="content scaffold-show" role="main">
-			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
-			<g:if test="${flash.message}">
-			<div class="message" role="status">${flash.message}</div>
-			</g:if>
-			<ol class="property-list user">
-			
-				<g:if test="${userInstance?.dni}">
-				<li class="fieldcontain">
-					<span id="dni-label" class="property-label"><g:message code="user.dni.label" default="Dni" /></span>
-					
-						<span class="property-value" aria-labelledby="dni-label"><g:fieldValue bean="${userInstance}" field="dni"/></span>
-					
-				</li>
+		<!-- Start: Topbar -->
+		<header id="topbar" class="alt">
+			<div class="topbar-left">
+				<ol class="breadcrumb">
+					<li class="crumb-active">
+						%{--<a href="index">User</a>--}%
+						<g:link class="create" action="index">User</g:link>
+					</li>
+					<li class="crumb-trail">Detalle</li>
+				</ol>
+			</div>
+
+		</header>
+		<!-- End: Topbar -->
+
+		<!-- Begin: Content -->
+		<section id="content" class="table-layout animated fadeIn">
+
+			<!-- begin: .tray-center -->
+			<div class="tray tray-center">
+
+				<g:if test="${flash.message}">
+					<div class="message" role="status">${flash.message}</div>
 				</g:if>
-			
-				<g:if test="${userInstance?.name}">
-				<li class="fieldcontain">
-					<span id="name-label" class="property-label"><g:message code="user.name.label" default="Name" /></span>
-					
-						<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${userInstance}" field="name"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${userInstance?.lastName}">
-				<li class="fieldcontain">
-					<span id="lastName-label" class="property-label"><g:message code="user.lastName.label" default="Last Name" /></span>
-					
-						<span class="property-value" aria-labelledby="lastName-label"><g:fieldValue bean="${userInstance}" field="lastName"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${userInstance?.birthday}">
-				<li class="fieldcontain">
-					<span id="birthday-label" class="property-label"><g:message code="user.birthday.label" default="Birthday" /></span>
-					
-						<span class="property-value" aria-labelledby="birthday-label"><g:formatDate date="${userInstance?.birthday}" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${userInstance?.password}">
-				<li class="fieldcontain">
-					<span id="password-label" class="property-label"><g:message code="user.password.label" default="Password" /></span>
-					
-						<span class="property-value" aria-labelledby="password-label"><g:fieldValue bean="${userInstance}" field="password"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${userInstance?.phoneNumber}">
-				<li class="fieldcontain">
-					<span id="phoneNumber-label" class="property-label"><g:message code="user.phoneNumber.label" default="Phone Number" /></span>
-					
-						<span class="property-value" aria-labelledby="phoneNumber-label"><g:fieldValue bean="${userInstance}" field="phoneNumber"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${userInstance?.sex}">
-				<li class="fieldcontain">
-					<span id="sex-label" class="property-label"><g:message code="user.sex.label" default="Sex" /></span>
-					
-						<span class="property-value" aria-labelledby="sex-label"><g:fieldValue bean="${userInstance}" field="sex"/></span>
-					
-				</li>
-				</g:if>
-			
-			</ol>
-			<g:form url="[resource:userInstance, action:'delete']" method="DELETE">
-				<fieldset class="buttons">
-					<g:link class="edit" action="edit" resource="${userInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
-				</fieldset>
-			</g:form>
-		</div>
+
+				<!-- Validation Example -->
+				<div class="admin-form theme-primary mw1000 center-block theme-danger" style="padding-bottom: 175px;">
+
+					<div class="panel heading-border panel-danger">
+
+						%{--<form method="post" action="/" id="admin-form">--}%
+
+							<div class="panel-body bg-light">
+
+								<div class="section-divider mt20 mb40">
+									<span> Datos </span>
+								</div>
+								<!-- .section-divider -->
+
+								<div class="media-body va-m">
+									<h2 class="media-heading">
+										<g:if test="${userInstance?.name}">
+											<g:fieldValue bean="${userInstance}" field="name"/>
+										</g:if>
+										<g:if test="${userInstance?.lastName}">
+											<g:fieldValue bean="${userInstance}" field="lastName"/>
+										</g:if>
+										<small> -
+										<g:if test="${userInstance?.dni}">
+											<g:fieldValue bean="${userInstance}" field="dni"/>
+										</g:if>
+										</small>
+									</h2>
+
+									<div>
+										<span class="panel-icon">
+											<i class="glyphicon glyphicon-calendar"></i>
+										</span>
+										<span class="panel-title">
+											<g:if test="${userInstance?.birthday}">
+												<g:formatDate date="${userInstance?.birthday}" />
+											</g:if>
+											<g:else>
+												----
+											</g:else>
+										</span>
+									</div>
+									<div>
+										<span class="panel-icon">
+											<i class="glyphicon glyphicon-phone-alt"></i>
+										</span>
+										<span class="panel-title">
+											<g:if test="${userInstance?.phoneNumber}">
+												<g:fieldValue bean="${userInstance}" field="phoneNumber"/>
+											</g:if>
+											<g:else>
+												----
+											</g:else>
+										</span>
+									</div>
+									<div>
+										<span class="panel-icon">
+											<i class="glyphicon glyphicon-user"></i>
+										</span>
+										<span class="panel-title">
+											<g:if test="${userInstance?.sex}">
+												<g:fieldValue bean="${userInstance}" field="sex"/>
+											</g:if>
+										</span>
+									</div>
+								</div>
+
+							</div>
+							<!-- end .form-body section -->
+							%{--<div class="panel-footer text-right">--}%
+								%{--<button type="submit" class="button btn-primary btn-danger"> Validate Form </button>--}%
+								%{--<button type="reset" class="button btn-danger"> Cancel </button>--}%
+							%{--</div>--}%
+							<div class="panel-footer text-right">
+								<g:form url="[resource:userInstance, action:'delete']" method="DELETE">
+									<fieldset class="buttons">
+										<g:link class="button btn-primary btn-danger" action="edit" resource="${userInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
+										<g:actionSubmit class="button btn-danger" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+									</fieldset>
+								</g:form>
+							</div>
+							<!-- end .form-footer section -->
+						%{--</form>--}%
+
+					</div>
+
+				</div>
+				<!-- end: .admin-form -->
+
+			</div>
+			<!-- end: .tray-center -->
+
+		</section>
+
+		%{--<div id="show-user" class="content scaffold-show" role="main">--}%
+			%{--<g:form url="[resource:userInstance, action:'delete']" method="DELETE">--}%
+				%{--<fieldset class="buttons">--}%
+					%{--<g:link class="edit" action="edit" resource="${userInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>--}%
+					%{--<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />--}%
+				%{--</fieldset>--}%
+			%{--</g:form>--}%
+		%{--</div>--}%
 	</body>
 </html>

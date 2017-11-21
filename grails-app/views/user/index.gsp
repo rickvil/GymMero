@@ -48,8 +48,6 @@
 
 							<g:sortableColumn property="birthday" title="${message(code: 'user.birthday.label', default: 'Birthday')}" />
 
-							<g:sortableColumn property="password" title="${message(code: 'user.password.label', default: 'Password')}" />
-
 							<g:sortableColumn property="phoneNumber" title="${message(code: 'user.phoneNumber.label', default: 'Phone Number')}" />
 
 						</tr>
@@ -65,8 +63,6 @@
 								<td>${fieldValue(bean: userInstance, field: "lastName")}</td>
 
 								<td><g:formatDate date="${userInstance.birthday}" /></td>
-
-								<td>${fieldValue(bean: userInstance, field: "password")}</td>
 
 								<td>${fieldValue(bean: userInstance, field: "phoneNumber")}</td>
 
