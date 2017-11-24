@@ -27,15 +27,26 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form url="[resource:userInstance, action:'update']" method="PUT" >
-				<g:hiddenField name="version" value="${userInstance?.version}" />
-				<fieldset class="form">
-					<g:render template="form"/>
-				</fieldset>
-				<fieldset class="buttons">
-					<g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
-				</fieldset>
-			</g:form>
+
+			<section id="content" class="table-layout animated fadeIn">
+				<div class="tray tray-center">
+					<div class="admin-form theme-primary mw1000 center-block" style="padding-bottom: 175px;">
+						<div class="panel heading-border panel-danger">
+							<g:form url="[resource:userInstance, action:'update']" method="PUT" >
+								<g:hiddenField name="version" value="${userInstance?.version}" />
+								<fieldset class="form">
+									<g:render template="form"/>
+								</fieldset>
+
+								<div class="panel-footer text-right">
+									<g:actionSubmit class="button btn-primary btn-danger" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
+									<button type="reset" class="button btn-danger"> Cancel </button>
+								</div>
+							</g:form>
+						</div>
+					</div>
+				</div>
+			</section>
 		</div>
 	</body>
 </html>
