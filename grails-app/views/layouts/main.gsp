@@ -899,7 +899,7 @@
 			<ul class="nav sidebar-menu">
 				<li class="sidebar-label pt20">Menu</li>
 				<li>
-					<a href="user/index">
+					<a href="${createLink(uri: '/user')}">
 						<span class="fa fa-user"></span>
 						<span class="sidebar-title">Usuarios</span>
 						<span class="sidebar-title-tray">

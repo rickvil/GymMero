@@ -11,7 +11,7 @@
 				<label for="dni" class="field prepend-icon">
 					<g:textField name="dni" required="" value="${userInstance?.dni}" class="gui-input" placeholder="Dni"/>
 					<label for="dni" class="field-icon">
-						<i class="fa fa-credit-card"></i>
+						<i class="fa fa-list-alt"></i>
 					</label>
 				</label>
 			</div>
@@ -19,10 +19,7 @@
 
 		<div class="col-md-6">
 			<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'birthday', 'error')} ">
-				<label for="birthday">
-					<g:message code="user.birthday.label" default="Birthday" />
-				</label>
-				<g:datePicker name="birthday" precision="day"  value="${userInstance?.birthday}" default="none" noSelection="['': '']" />
+				<g:datePicker name="birthday" precision="day" value="${userInstance?.birthday}" default="${new Date()}" noSelection="['': '']" years="${1940..2021}"/>
 			</div>
 		</div>
 	</div>

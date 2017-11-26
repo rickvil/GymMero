@@ -6,15 +6,17 @@
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#create-user" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
+		<header id="topbar" class="alt">
+			<div class="topbar-left">
+				<ol class="breadcrumb">
+					<li class="crumb-active">
+						<g:link class="create" action="index">User</g:link>
+					</li>
+					<li class="crumb-trail">Crear</li>
+				</ol>
+			</div>
+		</header>
 		<div id="create-user" class="content scaffold-create" role="main">
-			<h1><g:message code="default.create.label" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -37,7 +39,7 @@
 
 								<div class="panel-footer text-right">
 									<g:submitButton name="create" class="button btn-primary btn-danger" value="${message(code: 'default.button.create.label', default: 'Create')}" />
-									<button type="reset" class="button btn-danger"> Cancel </button>
+									<g:link class="button btn-danger" href="${createLink(uri: '/user')}">Cancel</g:link>
 								</div>
 							</g:form>
 						</div>
