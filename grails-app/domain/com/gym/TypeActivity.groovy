@@ -1,4 +1,4 @@
-package gymmero
+package com.gym
 
 class TypeActivity {
 

@@ -1,5 +1,6 @@
-package gymmero
+package com.gym
 
+import com.gym.TypeActivity
 import grails.test.mixin.TestFor
 import spock.lang.Specification
 
