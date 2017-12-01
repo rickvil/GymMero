@@ -43,7 +43,8 @@
 									</g:if>
 									</small>
 								</h2>
-
+								<div class="section row">
+								</div>
 								<div>
 									<span class="panel-icon">
 										<i class="glyphicon glyphicon-calendar"></i>
