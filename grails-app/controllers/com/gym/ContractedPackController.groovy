@@ -19,8 +19,10 @@ class ContractedPackController {
         respond contractedPackInstance
     }
 
-    def create() {
-        respond new ContractedPack(params)
+    def create(User userInstance) {
+        ContractedPack contractedPack = new ContractedPack(params)
+        contractedPack.user = userInstance
+        respond contractedPack
     }
 
     @Transactional

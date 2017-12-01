@@ -7,7 +7,7 @@
 		<g:message code="contractedPack.user.label" default="User" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="user" name="user.id" from="${com.gym.User.list()}" optionKey="id" required="" value="${contractedPackInstance?.user?.id}" class="many-to-one"/>
+	<g:select id="user" name="user.id" from="${com.gym.User.list()}" optionKey="id" optionValue="name" required="" value="${contractedPackInstance?.user?.id}" class="many-to-one"/>
 
 </div>
 
@@ -16,7 +16,7 @@
 		<g:message code="contractedPack.activity.label" default="Activity" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="activity" name="activity.id" from="${com.gym.Activity.list()}" optionKey="id" required="" value="${contractedPackInstance?.activity?.id}" class="many-to-one"/>
+	<g:select id="activity" name="activity.id" from="${com.gym.Activity.list()}" optionKey="id" optionValue="title" required="" value="${contractedPackInstance?.activity?.id}" class="many-to-one"/>
 
 </div>
 
@@ -25,7 +25,7 @@
 		<g:message code="contractedPack.typeActivity.label" default="Type Activity" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="typeActivity" name="typeActivity.id" from="${com.gym.TypeActivity.list()}" optionKey="id" required="" value="${contractedPackInstance?.typeActivity?.id}" class="many-to-one"/>
+	<g:select id="typeActivity" name="typeActivity.id" from="${com.gym.TypeActivity.list()}" optionKey="id" optionValue="title" required="" value="${contractedPackInstance?.typeActivity?.id}" class="many-to-one"/>
 
 </div>
 

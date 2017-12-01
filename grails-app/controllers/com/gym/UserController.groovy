@@ -50,6 +50,10 @@ class UserController {
         respond userInstance
     }
 
+    def contractedPack(User userInstance){
+        forward(controller: "contractedPack",  action: "create", params: userInstance)
+    }
+
     @Transactional
     def update(User userInstance) {
         if (userInstance == null) {
