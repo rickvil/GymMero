@@ -15,7 +15,7 @@ class ContractedPack {
         activity(nullable: false)
         typeActivity(nullable: false)
         barCode(nullable: true)
-        credit(nullable: true, inList: [0, 8, 12, 20])
+        credit(nullable: true, inList: [0, 8, 12, 20], size: 1..2)
         free(nullable: false)
     }
 }
