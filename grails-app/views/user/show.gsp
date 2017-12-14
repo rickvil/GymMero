@@ -83,15 +83,82 @@
 								</div>
 							</div>
 						</div>
+
+
+
 						<div class="panel-footer text-right">
 							<g:form url="[resource:userInstance, action:'delete']" method="DELETE">
 								<fieldset class="buttons">
-									<g:link class="button btn-primary btn-danger" action="contractedPack" resource="${userInstance}"><g:message code="default.button.create.label" default="Create" /></g:link>
+									<g:link class="button btn-primary btn-danger" action="contractedPack" resource="${userInstance}">Contratar</g:link>
 									<g:link class="button btn-primary btn-danger" action="edit" resource="${userInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
 									<g:actionSubmit class="button btn-danger" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 								</fieldset>
 							</g:form>
 						</div>
+
+						<div class="col-md-12">
+							<div class="panel panel-visible" id="spy5">
+
+								<div class="panel-heading">
+									<div class="panel-title hidden-xs">
+
+										<span class="glyphicon glyphicon-tasks"></span>Packs Contratados
+									</div>
+								</div>
+								<div class="panel-body pn">
+									<g:if test="${flash.message}">
+										<div class="message" role="status">${flash.message}</div>
+									</g:if>
+									<table class="table table-striped table-hover display" id="datatable5" cellspacing="0" width="100%">
+										<thead>
+										<tr>
+
+											<th><g:message code="contractedPack.user.label" default="User" /></th>
+
+											<th><g:message code="contractedPack.activity.label" default="Activity" /></th>
+
+											<th><g:message code="contractedPack.typeActivity.label" default="Type Activity" /></th>
+
+											<g:sortableColumn property="barCode" title="${message(code: 'contractedPack.barCode.label', default: 'Bar Code')}" />
+
+											<g:sortableColumn property="credit" title="${message(code: 'contractedPack.credit.label', default: 'Credit')}" />
+
+											<g:sortableColumn property="free" title="${message(code: 'contractedPack.free.label', default: 'Free')}" />
+
+										</tr>
+
+
+										</thead>
+										<tbody>
+
+										<g:each in="${contractedPackInstanceList}" status="i" var="contractedPackInstance">
+											<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+
+												<td><g:link action="show" id="${contractedPackInstance.id}">${fieldValue(bean: contractedPackInstance, field: "user.name")}</g:link></td>
+
+												<td>${fieldValue(bean: contractedPackInstance, field: "activity.title")}</td>
+
+												<td>${fieldValue(bean: contractedPackInstance, field: "typeActivity.title")}</td>
+
+												<td>${fieldValue(bean: contractedPackInstance, field: "barCode")}</td>
+
+												<td>${fieldValue(bean: contractedPackInstance, field: "credit")}</td>
+
+												<td><g:formatBoolean boolean="${contractedPackInstance.free}" /></td>
+
+											</tr>
+										</g:each>
+
+
+										</tbody>
+									</table>
+									<div class="pagination">
+										<g:paginate total="${userInstanceCount ?: 0}" />
+									</div>
+								</div>
+							</div>
+						</div>
+
 					</div>
 				</div>
 			</div>

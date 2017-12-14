@@ -16,7 +16,8 @@ class UserController {
     }
 
     def show(User userInstance) {
-        respond userInstance
+        def contractedPackInstanceList = ContractedPack.findAllByUser(userInstance)
+        respond userInstance, model:[contractedPackInstanceList: contractedPackInstanceList]
     }
 
     def create() {

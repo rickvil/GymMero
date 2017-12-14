@@ -27,7 +27,7 @@
 				<li class="fieldcontain">
 					<span id="user-label" class="property-label"><g:message code="contractedPack.user.label" default="User" /></span>
 					
-						<span class="property-value" aria-labelledby="user-label"><g:link controller="user" action="show" id="${contractedPackInstance?.user?.id}">${contractedPackInstance?.user?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="user-label"><g:link controller="user" action="show" id="${contractedPackInstance?.user?.id}">${contractedPackInstance?.user?.name.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>
@@ -36,7 +36,7 @@
 				<li class="fieldcontain">
 					<span id="activity-label" class="property-label"><g:message code="contractedPack.activity.label" default="Activity" /></span>
 					
-						<span class="property-value" aria-labelledby="activity-label"><g:link controller="activity" action="show" id="${contractedPackInstance?.activity?.id}">${contractedPackInstance?.activity?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="activity-label"><g:link controller="activity" action="show" id="${contractedPackInstance?.activity?.id}">${contractedPackInstance?.activity?.title.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>
@@ -45,7 +45,7 @@
 				<li class="fieldcontain">
 					<span id="typeActivity-label" class="property-label"><g:message code="contractedPack.typeActivity.label" default="Type Activity" /></span>
 					
-						<span class="property-value" aria-labelledby="typeActivity-label"><g:link controller="typeActivity" action="show" id="${contractedPackInstance?.typeActivity?.id}">${contractedPackInstance?.typeActivity?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="typeActivity-label"><g:link controller="typeActivity" action="show" id="${contractedPackInstance?.typeActivity?.id}">${contractedPackInstance?.typeActivity?.title.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>
