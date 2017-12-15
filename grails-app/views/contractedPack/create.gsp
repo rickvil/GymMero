@@ -10,7 +10,7 @@
 			<div class="topbar-left">
 				<ol class="breadcrumb">
 					<li class="crumb-active">
-						<g:link class="create" action="index">User</g:link>
+						<g:link class="create" action="index">Mero Socios</g:link>
 					</li>
 					<li class="crumb-trail">Contratar Pack</li>
 				</ol>

@@ -9,6 +9,7 @@ class User {
     String password
     String phoneNumber
     String sex
+    String email
 
     static constraints = {
         dni(blank: false, unique: true)
@@ -18,5 +19,6 @@ class User {
         password(nullable: true, blank: true, password: true)
         phoneNumber(nullable: true)
         sex(nullable: false, inList: ["M", "F"], size: 1..1)
+        email(nullable: true, email: true, size: 0..50)
     }
 }

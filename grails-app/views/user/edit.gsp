@@ -11,7 +11,7 @@
 			<div class="topbar-left">
 				<ol class="breadcrumb">
 					<li class="crumb-active">
-						<g:link class="create" action="index">User</g:link>
+						<g:link class="create" action="index">Mero Socios</g:link>
 					</li>
 					<li class="crumb-trail">Editar</li>
 				</ol>
@@ -31,7 +31,7 @@
 
 			<section id="content" class="table-layout animated fadeIn">
 				<div class="tray tray-center">
-					<div class="admin-form theme-primary mw1000 center-block" style="padding-bottom: 175px;">
+					<div class="admin-form theme-primary mw1000 center-block theme-danger" style="padding-bottom: 175px;">
 						<div class="panel heading-border panel-danger">
 							<g:form url="[resource:userInstance, action:'update']" method="PUT" >
 								<g:hiddenField name="version" value="${userInstance?.version}" />

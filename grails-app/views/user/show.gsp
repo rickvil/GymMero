@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<meta name="layout" content="main">
-		<g:set var="entityName" value="${message(code: 'user.label', default: 'User')}" />
+		<g:set var="entityName" value="${message(code: 'user.label', default: 'Mero Socios')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
 	<body>
@@ -11,7 +11,7 @@
 			<div class="topbar-left">
 				<ol class="breadcrumb">
 					<li class="crumb-active">
-						<g:link class="create" action="index">User</g:link>
+						<g:link class="create" action="index">Mero Socios</g:link>
 					</li>
 					<li class="crumb-trail">Detalle</li>
 				</ol>
@@ -27,7 +27,7 @@
 					<div class="panel heading-border panel-danger">
 						<div class="panel-body bg-light">
 							<div class="section-divider mt20 mb40">
-								<span> Datos </span>
+								<span> Datos del Mero Socio </span>
 							</div>
 							<div class="media-body va-m">
 								<h2 class="media-heading">
@@ -89,7 +89,7 @@
 						<div class="panel-footer text-right">
 							<g:form url="[resource:userInstance, action:'delete']" method="DELETE">
 								<fieldset class="buttons">
-									<g:link class="button btn-primary btn-danger" action="contractedPack" resource="${userInstance}">Contratar</g:link>
+									<g:link class="button btn-primary btn-danger" action="contractedPack" resource="${userInstance}">Contratar Pack</g:link>
 									<g:link class="button btn-primary btn-danger" action="edit" resource="${userInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
 									<g:actionSubmit class="button btn-danger" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 								</fieldset>
@@ -113,17 +113,17 @@
 										<thead>
 										<tr>
 
-											<th><g:message code="contractedPack.user.label" default="User" /></th>
+											<th><g:message code="contractedPack.user.label" default="Mero Socio" /></th>
 
-											<th><g:message code="contractedPack.activity.label" default="Activity" /></th>
+											<th><g:message code="contractedPack.activity.label" default="Actividad" /></th>
 
-											<th><g:message code="contractedPack.typeActivity.label" default="Type Activity" /></th>
+											<th><g:message code="contractedPack.typeActivity.label" default="Tipo de Actividad" /></th>
 
-											<g:sortableColumn property="barCode" title="${message(code: 'contractedPack.barCode.label', default: 'Bar Code')}" />
+											<g:sortableColumn property="barCode" title="${message(code: 'contractedPack.barCode.label', default: 'Código de Barras')}" />
 
-											<g:sortableColumn property="credit" title="${message(code: 'contractedPack.credit.label', default: 'Credit')}" />
+											<g:sortableColumn property="credit" title="${message(code: 'contractedPack.credit.label', default: 'Credito')}" />
 
-											<g:sortableColumn property="free" title="${message(code: 'contractedPack.free.label', default: 'Free')}" />
+											<g:sortableColumn property="free" title="${message(code: 'contractedPack.free.label', default: 'Libre')}" />
 
 										</tr>
 

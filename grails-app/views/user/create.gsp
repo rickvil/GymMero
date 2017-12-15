@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta name="layout" content="main">
-		<g:set var="entityName" value="${message(code: 'user.label', default: 'User')}" />
+		<g:set var="entityName" value="${message(code: 'user.label', default: 'Mero Socios')}" />
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
 	</head>
 	<body>
@@ -10,7 +10,7 @@
 			<div class="topbar-left">
 				<ol class="breadcrumb">
 					<li class="crumb-active">
-						<g:link class="create" action="index">User</g:link>
+						<g:link class="create" action="index">Mero Socios</g:link>
 					</li>
 					<li class="crumb-trail">Crear</li>
 				</ol>

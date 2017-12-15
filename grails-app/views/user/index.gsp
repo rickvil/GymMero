@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta name="layout" content="main">
-		<g:set var="entityName" value="${message(code: 'user.label', default: 'User')}" />
+		<g:set var="entityName" value="${message(code: 'user.label', default: 'Mero Socios')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
@@ -15,9 +15,9 @@
 				<ol class="breadcrumb">
 					<li class="crumb-active">
 						%{--<a href="index">User</a>--}%
-						<g:link class="create" action="index">User</g:link>
+						<g:link class="create" action="index">Mero Socios</g:link>
 					</li>
-					<li class="crumb-trail">List</li>
+					<li class="crumb-trail">Listado</li>
 				</ol>
 			</div>
 
@@ -42,13 +42,13 @@
 						<tr>
 							<g:sortableColumn property="dni" title="${message(code: 'user.dni.label', default: 'Dni')}" />
 
-							<g:sortableColumn property="name" title="${message(code: 'user.name.label', default: 'Name')}" />
+							<g:sortableColumn property="name" title="${message(code: 'user.name.label', default: 'Nombre')}" />
 
-							<g:sortableColumn property="lastName" title="${message(code: 'user.lastName.label', default: 'Last Name')}" />
+							<g:sortableColumn property="lastName" title="${message(code: 'user.lastName.label', default: 'Apellido')}" />
 
-							<g:sortableColumn property="birthday" title="${message(code: 'user.birthday.label', default: 'Birthday')}" />
+							<g:sortableColumn property="birthday" title="${message(code: 'user.birthday.label', default: 'Cumpleaños')}" />
 
-							<g:sortableColumn property="phoneNumber" title="${message(code: 'user.phoneNumber.label', default: 'Phone Number')}" />
+							<g:sortableColumn property="phoneNumber" title="${message(code: 'user.phoneNumber.label', default: 'Teléfono')}" />
 
 						</tr>
 						</thead>
