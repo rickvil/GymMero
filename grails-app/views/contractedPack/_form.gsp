@@ -57,10 +57,14 @@
 		</div>
 
 		<div class="col-md-6">
-			<label class="field select">
-				<g:select name="credit" from="${contractedPackInstance.constraints.credit.inList}" required="" value="${fieldValue(bean: contractedPackInstance, field: 'credit')}" valueMessagePrefix="contractedPack.credit" noSelection="['': '']"/>
-				<i class="arrow double"></i>
-			</label>
+			<div class="fieldcontain ${hasErrors(bean: contractedPackInstance, field: 'credit', 'error')} ">
+				<label for="credit" class="field prepend-icon">
+					<g:field name="credit" type="number" value="${contractedPackInstance.credit}" min="0" max="60" class="gui-input" />
+					<label for="credit" class="field-icon">
+						<i class="fa fa-calendar"></i>
+					</label>
+				</label>
+			</div>
 		</div>
 	</div>
 
@@ -77,8 +81,47 @@
 		</div>
 
 		<div class="col-md-6">
-			<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'birthday', 'error')} ">
-				<g:datePicker name="contractedDate" precision="day"  value="${contractedPackInstance?.contractedDate}"  />
+			<div class="fieldcontain ${hasErrors(bean: contractedPackInstance, field: 'price', 'error')} required">
+				<label for="price" class="field prepend-icon">
+					<g:field name="price" value="${fieldValue(bean: contractedPackInstance, field: 'price')}" required="" class="gui-input" />
+					<label for="price" class="field-icon">
+						<i class="fa fa-money"></i>
+					</label>
+				</label>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="section row">
+		<div class="col-md-12">
+			<div class="fieldcontain ${hasErrors(bean: contractedPackInstance, field: 'comment', 'error')} ">
+				<label for="comment">
+					<g:message code="contractedPack.comment.label" default="Comment" />
+				</label>
+				<g:textArea name="comment" cols="80" rows="5" maxlength="1000" value="${contractedPackInstance?.comment}"/>
+			</div>
+		</div>
+	</div>
+	
+	<div class="section row">
+		<div class="col-md-6">
+			<div class="fieldcontain ${hasErrors(bean: contractedPackInstance, field: 'contractEndDate', 'error')} required">
+				<label for="contractEndDate">
+					<g:message code="contractedPack.contractEndDate.label" default="Contract End Date" />
+					<span class="required-indicator">*</span>
+				</label>
+				<g:datePicker name="contractEndDate" precision="day"  value="${contractedPackInstance?.contractEndDate}"  />
+			</div>
+		</div>
+	
+		<div class="col-md-6">
+			<div class="fieldcontain ${hasErrors(bean: contractedPackInstance, field: 'contractStartDate', 'error')} required">
+				<label for="contractStartDate">
+					<g:message code="contractedPack.contractStartDate.label" default="Contract Start Date" />
+					<span class="required-indicator">*</span>
+				</label>
+				<g:datePicker name="contractStartDate" precision="day"  value="${contractedPackInstance?.contractStartDate}"  />
 			</div>
 		</div>
 	</div>

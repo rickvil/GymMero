@@ -77,11 +77,38 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${contractedPackInstance?.contractedDate}">
+				<g:if test="${contractedPackInstance?.comment}">
 				<li class="fieldcontain">
-					<span id="contractedDate-label" class="property-label"><g:message code="contractedPack.contractedDate.label" default="Contracted Date" /></span>
+					<span id="comment-label" class="property-label"><g:message code="contractedPack.comment.label" default="Comment" /></span>
 					
-						<span class="property-value" aria-labelledby="contractedDate-label"><g:formatDate date="${contractedPackInstance?.contractedDate}" /></span>
+						<span class="property-value" aria-labelledby="comment-label"><g:fieldValue bean="${contractedPackInstance}" field="comment"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${contractedPackInstance?.contractEndDate}">
+				<li class="fieldcontain">
+					<span id="contractEndDate-label" class="property-label"><g:message code="contractedPack.contractEndDate.label" default="Contract End Date" /></span>
+					
+						<span class="property-value" aria-labelledby="contractEndDate-label"><g:formatDate date="${contractedPackInstance?.contractEndDate}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${contractedPackInstance?.contractStartDate}">
+				<li class="fieldcontain">
+					<span id="contractStartDate-label" class="property-label"><g:message code="contractedPack.contractStartDate.label" default="Contract Start Date" /></span>
+					
+						<span class="property-value" aria-labelledby="contractStartDate-label"><g:formatDate date="${contractedPackInstance?.contractStartDate}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${contractedPackInstance?.price}">
+				<li class="fieldcontain">
+					<span id="price-label" class="property-label"><g:message code="contractedPack.price.label" default="Price" /></span>
+					
+						<span class="property-value" aria-labelledby="price-label"><g:fieldValue bean="${contractedPackInstance}" field="price"/></span>
 					
 				</li>
 				</g:if>
