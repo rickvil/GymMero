@@ -113,17 +113,19 @@
 										<thead>
 										<tr>
 
-											<th><g:message code="contractedPack.user.label" default="Mero Socio" /></th>
+											<th><g:message code="contractedPack.contractStartDate.label" default="Inicio" /></th>
 
 											<th><g:message code="contractedPack.activity.label" default="Actividad" /></th>
 
 											<th><g:message code="contractedPack.typeActivity.label" default="Tipo de Actividad" /></th>
 
-											<g:sortableColumn property="barCode" title="${message(code: 'contractedPack.barCode.label', default: 'Código de Barras')}" />
+											%{--<g:sortableColumn property="barCode" title="${message(code: 'contractedPack.barCode.label', default: 'Código de Barras')}" />--}%
 
 											<g:sortableColumn property="credit" title="${message(code: 'contractedPack.credit.label', default: 'Credito')}" />
 
 											<g:sortableColumn property="free" title="${message(code: 'contractedPack.free.label', default: 'Libre')}" />
+
+											<g:sortableColumn property="contractEndDate" title="${message(code: 'contractedPack.contractEndDate.label', default: 'Fin')}" />
 
 										</tr>
 
@@ -134,17 +136,20 @@
 										<g:each in="${contractedPackInstanceList}" status="i" var="contractedPackInstance">
 											<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 
-												<td><g:link action="show" id="${contractedPackInstance.id}">${fieldValue(bean: contractedPackInstance, field: "user.name")}</g:link></td>
+												<td><g:link controller="contractedPack" action="show" id="${contractedPackInstance.id}">${fieldValue(bean: contractedPackInstance, field: "contractStartDate")}</g:link></td>
 
 												<td>${fieldValue(bean: contractedPackInstance, field: "activity.title")}</td>
 
 												<td>${fieldValue(bean: contractedPackInstance, field: "typeActivity.title")}</td>
 
-												<td>${fieldValue(bean: contractedPackInstance, field: "barCode")}</td>
+												%{--<td>${fieldValue(bean: contractedPackInstance, field: "barCode")}</td>--}%
 
 												<td>${fieldValue(bean: contractedPackInstance, field: "credit")}</td>
 
 												<td><g:formatBoolean boolean="${contractedPackInstance.free}" /></td>
+
+												<td>${fieldValue(bean: contractedPackInstance, field: "contractEndDate")}</td>
+
 
 											</tr>
 										</g:each>
