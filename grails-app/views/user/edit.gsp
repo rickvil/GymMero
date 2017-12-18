@@ -41,7 +41,7 @@
 
 								<div class="panel-footer text-right">
 									<g:actionSubmit class="button btn-primary btn-danger" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
-									<g:link class="button btn-danger" href="${createLink(uri: '/user')}">Cancel</g:link>
+									<g:link class="button btn-danger" href="${createLink(uri: '/user')}">Cancelar</g:link>
 								</div>
 							</g:form>
 						</div>

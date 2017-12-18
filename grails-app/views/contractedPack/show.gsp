@@ -8,118 +8,134 @@
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#show-contractedPack" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
-		<div id="show-contractedPack" class="content scaffold-show" role="main">
-			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
-			<g:if test="${flash.message}">
-			<div class="message" role="status">${flash.message}</div>
-			</g:if>
-			<ol class="property-list contractedPack">
-			
-				<g:if test="${contractedPackInstance?.user}">
-				<li class="fieldcontain">
-					<span id="user-label" class="property-label"><g:message code="contractedPack.user.label" default="User" /></span>
-					
-						<span class="property-value" aria-labelledby="user-label"><g:link controller="user" action="show" id="${contractedPackInstance?.user?.id}">${contractedPackInstance?.user?.name.encodeAsHTML()}</g:link></span>
-					
-				</li>
+		<header id="topbar" class="alt">
+			<div class="topbar-left">
+				<ol class="breadcrumb">
+					<li class="crumb-active">
+						<g:link class="create" controller="user" action="show" id="${contractedPackInstance?.user?.id}">Mero Socios / Pack Contratados</g:link>
+					</li>
+					<li class="crumb-trail">Detalle</li>
+				</ol>
+			</div>
+		</header>
+
+		<section id="content" class="table-layout animated fadeIn">
+			<div class="tray tray-center">
+				<g:if test="${flash.message}">
+					<div class="message" role="status">${flash.message}</div>
 				</g:if>
-			
-				<g:if test="${contractedPackInstance?.activity}">
-				<li class="fieldcontain">
-					<span id="activity-label" class="property-label"><g:message code="contractedPack.activity.label" default="Activity" /></span>
-					
-						<span class="property-value" aria-labelledby="activity-label"><g:link controller="activity" action="show" id="${contractedPackInstance?.activity?.id}">${contractedPackInstance?.activity?.title.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${contractedPackInstance?.typeActivity}">
-				<li class="fieldcontain">
-					<span id="typeActivity-label" class="property-label"><g:message code="contractedPack.typeActivity.label" default="Type Activity" /></span>
-					
-						<span class="property-value" aria-labelledby="typeActivity-label"><g:link controller="typeActivity" action="show" id="${contractedPackInstance?.typeActivity?.id}">${contractedPackInstance?.typeActivity?.title.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${contractedPackInstance?.barCode}">
-				<li class="fieldcontain">
-					<span id="barCode-label" class="property-label"><g:message code="contractedPack.barCode.label" default="Bar Code" /></span>
-					
-						<span class="property-value" aria-labelledby="barCode-label"><g:fieldValue bean="${contractedPackInstance}" field="barCode"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${contractedPackInstance?.credit}">
-				<li class="fieldcontain">
-					<span id="credit-label" class="property-label"><g:message code="contractedPack.credit.label" default="Credit" /></span>
-					
-						<span class="property-value" aria-labelledby="credit-label"><g:fieldValue bean="${contractedPackInstance}" field="credit"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${contractedPackInstance?.free}">
-				<li class="fieldcontain">
-					<span id="free-label" class="property-label"><g:message code="contractedPack.free.label" default="Free" /></span>
-					
-						<span class="property-value" aria-labelledby="free-label"><g:formatBoolean boolean="${contractedPackInstance?.free}" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${contractedPackInstance?.comment}">
-				<li class="fieldcontain">
-					<span id="comment-label" class="property-label"><g:message code="contractedPack.comment.label" default="Comment" /></span>
-					
-						<span class="property-value" aria-labelledby="comment-label"><g:fieldValue bean="${contractedPackInstance}" field="comment"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${contractedPackInstance?.contractEndDate}">
-				<li class="fieldcontain">
-					<span id="contractEndDate-label" class="property-label"><g:message code="contractedPack.contractEndDate.label" default="Contract End Date" /></span>
-					
-						<span class="property-value" aria-labelledby="contractEndDate-label"><g:formatDate date="${contractedPackInstance?.contractEndDate}" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${contractedPackInstance?.contractStartDate}">
-				<li class="fieldcontain">
-					<span id="contractStartDate-label" class="property-label"><g:message code="contractedPack.contractStartDate.label" default="Contract Start Date" /></span>
-					
-						<span class="property-value" aria-labelledby="contractStartDate-label"><g:formatDate date="${contractedPackInstance?.contractStartDate}" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${contractedPackInstance?.price}">
-				<li class="fieldcontain">
-					<span id="price-label" class="property-label"><g:message code="contractedPack.price.label" default="Price" /></span>
-					
-						<span class="property-value" aria-labelledby="price-label"><g:fieldValue bean="${contractedPackInstance}" field="price"/></span>
-					
-				</li>
-				</g:if>
-			
-			</ol>
-			<g:form url="[resource:contractedPackInstance, action:'delete']" method="DELETE">
-				<fieldset class="buttons">
-					<g:link class="edit" action="edit" resource="${contractedPackInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
-				</fieldset>
-			</g:form>
-		</div>
+				<div class="admin-form theme-primary mw1000 center-block theme-danger" style="padding-bottom: 175px;">
+					<div class="panel heading-border panel-danger">
+						<div class="panel-body bg-light">
+							<div class="section-divider mt20 mb40">
+								<span> Datos del Pack Contratado</span>
+							</div>
+							<div class="media-body va-m">
+								<h2 class="media-heading">
+									<g:if test="${contractedPackInstance?.user?.name}">
+										<g:fieldValue bean="${contractedPackInstance?.user}" field="name"/>
+									</g:if>
+									<g:if test="${contractedPackInstance?.user?.lastName}">
+										<g:fieldValue bean="${contractedPackInstance?.user}" field="lastName"/>
+									</g:if>
+									<small> -
+									<g:if test="${contractedPackInstance?.user?.dni}">
+										<g:fieldValue bean="${contractedPackInstance?.user}" field="dni"/>
+									</g:if>
+									</small>
+								</h2>
+								<div class="section row">
+								</div>
+								<div>
+									<span class="panel-icon">
+										<i class="glyphicon glyphicon-calendar"></i>
+									</span>
+									<span class="panel-title">
+										<g:if test="${contractedPackInstance?.activity}">
+											<g:fieldValue bean="${contractedPackInstance?.activity}" field="title"/>
+										</g:if>
+										-
+										<g:if test="${contractedPackInstance?.typeActivity}">
+											<g:fieldValue bean="${contractedPackInstance?.typeActivity}" field="title"/>
+										</g:if>
+									</span>
+								</div>
+								<g:if test="${contractedPackInstance?.credit}">
+									<div>
+										<span class="panel-icon">
+											<i class="glyphicon glyphicon-phone-alt"></i>
+										</span>
+										<span class="panel-title">
+											<g:fieldValue bean="${contractedPackInstance}" field="credit"/>
+											clases - $
+											<g:fieldValue bean="${contractedPackInstance}" field="price"/>
+										</span>
+									</div>
+								</g:if>
+								<g:if test="${contractedPackInstance?.free}">
+									<div>
+										<span class="panel-icon">
+											<i class="glyphicon glyphicon-phone-alt"></i>
+										</span>
+										<span class="panel-title">
+												Clases Libres:
+												<g:formatBoolean boolean="${contractedPackInstance.free}" />
+												- $
+												<g:fieldValue bean="${contractedPackInstance}" field="price"/>
+										</span>
+									</div>
+								</g:if>
+								<div>
+									<span class="panel-icon">
+										<i class="glyphicon glyphicon-calendar"></i>
+									</span>
+									<span class="panel-title">
+										Desde:
+										<g:if test="${contractedPackInstance?.contractEndDate}">
+											<g:formatDate date="${contractedPackInstance?.contractEndDate}" />
+										</g:if>
+										- Hasta:
+										<g:if test="${contractedPackInstance?.contractEndDate}">
+											<g:formatDate date="${contractedPackInstance?.contractEndDate}" />
+										</g:if>
+									</span>
+								</div>
+								<div>
+									<span class="panel-icon">
+										<i class="glyphicon glyphicon-user"></i>
+									</span>
+									<span class="panel-title">
+										<g:if test="${contractedPackInstance?.comment}">
+											<g:fieldValue bean="${contractedPackInstance}" field="comment"/>
+										</g:if>
+										<g:else>
+											Sin comentarios
+										</g:else>
+									</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="panel-footer text-right">
+							%{--<g:form url="[resource:userInstance, action:'delete']" method="DELETE">--}%
+								%{--<fieldset class="buttons">--}%
+									%{--<g:link class="button btn-primary btn-danger" action="contractedPack" resource="${userInstance}">Contratar Pack</g:link>--}%
+									%{--<g:link class="button btn-primary btn-danger" action="edit" resource="${userInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>--}%
+									%{--<g:actionSubmit class="button btn-danger" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />--}%
+								%{--</fieldset>--}%
+							%{--</g:form>--}%
+
+							<g:form url="[resource:contractedPackInstance, action:'delete']" method="DELETE">
+								<fieldset class="buttons">
+									<g:link class="button btn-primary btn-danger" action="edit" resource="${contractedPackInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
+									<g:actionSubmit class="button btn-danger" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+								</fieldset>
+							</g:form>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</section>
 	</body>
 </html>

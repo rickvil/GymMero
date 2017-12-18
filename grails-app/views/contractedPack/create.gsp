@@ -39,8 +39,8 @@
 									<g:render template="form"/>
 								</fieldset>
 								<div class="panel-footer text-right">
-									<g:submitButton name="create" class="button btn-primary btn-danger" value="${message(code: 'default.button.create.label', default: 'Create')}" />
-									<g:link class="button btn-danger" href="${createLink(uri: '/user')}">Cancel</g:link>
+									<g:submitButton name="create" class="button btn-primary btn-danger" value="${message(code: 'default.button.contracted.label', default: 'Contratar')}" />
+									<g:link class="button btn-danger" href="${createLink(uri: '/user')}">Cancelar</g:link>
 								</div>
 							</g:form>
 						</div>
