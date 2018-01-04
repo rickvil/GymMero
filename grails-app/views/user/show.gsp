@@ -73,6 +73,19 @@
 								</div>
 								<div>
 									<span class="panel-icon">
+										<i class="glyphicon glyphicon-envelope"></i>
+									</span>
+									<span class="panel-title">
+										<g:if test="${userInstance?.email}">
+											<g:fieldValue bean="${userInstance}" field="email"/>
+										</g:if>
+										<g:else>
+											----
+										</g:else>
+									</span>
+								</div>
+								<div>
+									<span class="panel-icon">
 										<i class="glyphicon glyphicon-user"></i>
 									</span>
 									<span class="panel-title">
@@ -113,7 +126,7 @@
 										<thead>
 										<tr>
 
-											<th><g:message code="contractedPack.contractStartDate.label" default="Inicio" /></th>
+											<th><g:message code="contractedPack.contractStartDate.label" default="F.Inicio" /></th>
 
 											<th><g:message code="contractedPack.activity.label" default="Actividad" /></th>
 
@@ -121,11 +134,11 @@
 
 											%{--<g:sortableColumn property="barCode" title="${message(code: 'contractedPack.barCode.label', default: 'Código de Barras')}" />--}%
 
-											<g:sortableColumn property="credit" title="${message(code: 'contractedPack.credit.label', default: 'Credito')}" />
+											<g:sortableColumn property="credit" title="${message(code: 'contractedPack.credit.label', default: 'Cant. Clases')}" />
 
 											<g:sortableColumn property="free" title="${message(code: 'contractedPack.free.label', default: 'Libre')}" />
 
-											<g:sortableColumn property="contractEndDate" title="${message(code: 'contractedPack.contractEndDate.label', default: 'Fin')}" />
+											<g:sortableColumn property="contractEndDate" title="${message(code: 'contractedPack.contractEndDate.label', default: 'F.Vencimiento')}" />
 
 										</tr>
 

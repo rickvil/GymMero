@@ -113,7 +113,7 @@
 		<div class="col-md-6">
 			<div class="fieldcontain ${hasErrors(bean: contractedPackInstance, field: 'contractEndDate', 'error')} required">
 				<label for="contractEndDate">
-					<g:message code="contractedPack.contractEndDate.label" default="Fecha desde" />
+					<g:message code="contractedPack.contractEndDate.label" default="Fecha inicio" />
 					<span class="required-indicator">*</span>
 				</label>
 				<g:datePicker name="contractEndDate" precision="day"  value="${contractedPackInstance?.contractEndDate}"  />
@@ -123,7 +123,7 @@
 		<div class="col-md-6">
 			<div class="fieldcontain ${hasErrors(bean: contractedPackInstance, field: 'contractStartDate', 'error')} required">
 				<label for="contractStartDate">
-					<g:message code="contractedPack.contractStartDate.label" default="Fecha hasta" />
+					<g:message code="contractedPack.contractStartDate.label" default="Fecha vencimiento" />
 					<span class="required-indicator">*</span>
 				</label>
 				<g:datePicker name="contractStartDate" precision="day"  value="${contractedPackInstance?.contractStartDate}"  />

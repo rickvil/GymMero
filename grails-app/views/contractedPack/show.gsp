@@ -48,7 +48,7 @@
 								</div>
 								<div>
 									<span class="panel-icon">
-										<i class="glyphicon glyphicon-calendar"></i>
+										<i class="glyphicon glyphicon-shopping-cart"></i>
 									</span>
 									<span class="panel-title">
 										<g:if test="${contractedPackInstance?.activity}">
@@ -63,7 +63,7 @@
 								<g:if test="${contractedPackInstance?.credit}">
 									<div>
 										<span class="panel-icon">
-											<i class="glyphicon glyphicon-phone-alt"></i>
+											<i class="glyphicon glyphicon-usd"></i>
 										</span>
 										<span class="panel-title">
 											<g:fieldValue bean="${contractedPackInstance}" field="credit"/>
@@ -75,7 +75,7 @@
 								<g:if test="${contractedPackInstance?.free}">
 									<div>
 										<span class="panel-icon">
-											<i class="glyphicon glyphicon-phone-alt"></i>
+											<i class="glyphicon glyphicon-usd"></i>
 										</span>
 										<span class="panel-title">
 												Clases Libres:
@@ -102,7 +102,7 @@
 								</div>
 								<div>
 									<span class="panel-icon">
-										<i class="glyphicon glyphicon-user"></i>
+										<i class="glyphicon glyphicon-comment"></i>
 									</span>
 									<span class="panel-title">
 										<g:if test="${contractedPackInstance?.comment}">
