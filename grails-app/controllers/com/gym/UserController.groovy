@@ -86,7 +86,8 @@ class UserController {
             return
         }
 
-        userInstance.delete flush:true
+        userInstance.active=false
+        userInstance.save flush:true
 
         request.withFormat {
             form multipartForm {

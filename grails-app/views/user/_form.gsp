@@ -72,13 +72,16 @@
 					</label>
 				</label>
 			</div>
-
-			%{--<label for="password" class="field prepend-icon">--}%
-				%{--<g:field type="password" name="password" value="${userInstance?.password}" class="gui-input" placeholder="Create a password"/>--}%
-				%{--<label for="password" class="field-icon">--}%
-					%{--<i class="fa fa-lock"></i>--}%
-				%{--</label>--}%
-			%{--</label>--}%
+		</div>
+		<div class="col-md-6">
+			<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'active', 'error')} ">
+				<div class="option-group field">
+					<label class="option block">
+						<g:checkBox name="active" value="${userInstance?.active}" />
+						<span class="checkbox"></span> activo
+					</label>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

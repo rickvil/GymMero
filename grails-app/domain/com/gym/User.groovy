@@ -10,6 +10,7 @@ class User {
     String phoneNumber
     String sex
     String email
+    boolean active = true
 
     static constraints = {
         dni(blank: false, unique: true)
@@ -20,5 +21,6 @@ class User {
         phoneNumber(nullable: true)
         sex(nullable: false, inList: ["M", "F"], size: 1..1)
         email(nullable: true, email: true, size: 0..50)
+        active(nullable: false)
     }
 }

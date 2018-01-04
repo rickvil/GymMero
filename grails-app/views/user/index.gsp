@@ -54,7 +54,7 @@
 						</thead>
 						<tbody>
 						<g:each in="${userInstanceList}" status="i" var="userInstance">
-							<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+							<tr class="${(i % 2) == 0 ? 'even' : 'odd'}" style="${userInstance.active ? '': 'color: red;'}">
 
 								<td><g:link action="show" id="${userInstance.id}">${fieldValue(bean: userInstance, field: "dni")}</g:link></td>
 
