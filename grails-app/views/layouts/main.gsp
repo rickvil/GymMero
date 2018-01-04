@@ -23,7 +23,7 @@
 	<asset:stylesheet src="assets/admin-tools/admin-forms/css/admin-forms.min.css"/>
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="assets/img/favicon.ico">
+	<link rel="shortcut icon" href="${resource(file:'favicon.ico')}" type="image/x-icon" />
 
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
