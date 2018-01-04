@@ -83,12 +83,13 @@ class ContractedPackController {
             return
         }
 
+        User user = contractedPackInstance.user
         contractedPackInstance.delete flush:true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'ContractedPack.label', default: 'ContractedPack'), contractedPackInstance.id])
-                redirect action:"index", method:"GET"
+                redirect(controller: "user",  action: "show", id: user.id)
             }
             '*'{ render status: NO_CONTENT }
         }

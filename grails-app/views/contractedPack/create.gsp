@@ -10,7 +10,7 @@
 			<div class="topbar-left">
 				<ol class="breadcrumb">
 					<li class="crumb-active">
-						<g:link class="create" action="index">Mero Socios</g:link>
+						<g:link class="create" controller="user" action="show" id="${contractedPackInstance?.user?.id}">Mero Socios</g:link>
 					</li>
 					<li class="crumb-trail">Contratar Pack</li>
 				</ol>
@@ -40,7 +40,7 @@
 								</fieldset>
 								<div class="panel-footer text-right">
 									<g:submitButton name="create" class="button btn-primary btn-danger" value="${message(code: 'default.button.contracted.label', default: 'Contratar')}" />
-									<g:link class="button btn-danger" href="${createLink(uri: '/user')}">Cancelar</g:link>
+									<g:link class="button btn-danger" controller="user" action="show" id="${contractedPackInstance?.user?.id}">Cancelar</g:link>
 								</div>
 							</g:form>
 						</div>
