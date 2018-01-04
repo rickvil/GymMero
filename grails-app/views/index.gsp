@@ -83,7 +83,7 @@
 	<body>
 		%{--<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>--}%
 		%{--<div id="status" role="complementary">--}%
-			<h1>Mero Gym</h1>
+			<img src="${resource(file:'logo.jpg')}" alt="logo" style="width: 50%; margin:10px auto;display:block;">
 			%{--<ul>--}%
 				%{--<li>App version: <g:meta name="app.version"/></li>--}%
 				%{--<li>Grails version: <g:meta name="app.grails.version"/></li>--}%
