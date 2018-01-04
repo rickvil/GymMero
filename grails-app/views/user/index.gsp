@@ -62,7 +62,7 @@
 
 								<td>${fieldValue(bean: userInstance, field: "lastName")}</td>
 
-								<td><g:formatDate date="${userInstance.birthday}" /></td>
+								<td><g:formatDate format="dd-MM-yyyy" date="${userInstance.birthday}" /></td>
 
 								<td>${fieldValue(bean: userInstance, field: "phoneNumber")}</td>
 

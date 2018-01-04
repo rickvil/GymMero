@@ -51,7 +51,7 @@
 									</span>
 									<span class="panel-title">
 										<g:if test="${userInstance?.birthday}">
-											<g:formatDate date="${userInstance?.birthday}" />
+											<g:formatDate format="dd-MM-yyyy" date="${userInstance?.birthday}" />
 										</g:if>
 										<g:else>
 											----
@@ -149,7 +149,7 @@
 										<g:each in="${contractedPackInstanceList}" status="i" var="contractedPackInstance">
 											<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 
-												<td><g:link controller="contractedPack" action="show" id="${contractedPackInstance.id}">${fieldValue(bean: contractedPackInstance, field: "contractStartDate")}</g:link></td>
+												<td><g:link controller="contractedPack" action="show" id="${contractedPackInstance.id}"><g:formatDate format="dd-MM-yyyy" date="${contractedPackInstance?.contractStartDate}" /></g:link></td>
 
 												<td>${fieldValue(bean: contractedPackInstance, field: "activity.title")}</td>
 
@@ -161,8 +161,7 @@
 
 												<td><g:formatBoolean boolean="${contractedPackInstance.free}" /></td>
 
-												<td>${fieldValue(bean: contractedPackInstance, field: "contractEndDate")}</td>
-
+												<td><g:formatDate format="dd-MM-yyyy" date="${contractedPackInstance?.contractEndDate}" /></td>
 
 											</tr>
 										</g:each>

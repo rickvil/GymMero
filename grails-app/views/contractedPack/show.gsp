@@ -91,12 +91,12 @@
 									</span>
 									<span class="panel-title">
 										Desde:
-										<g:if test="${contractedPackInstance?.contractEndDate}">
-											<g:formatDate date="${contractedPackInstance?.contractEndDate}" />
+										<g:if test="${contractedPackInstance?.contractStartDate}">
+											<g:formatDate format="dd-MM-yyyy" date="${contractedPackInstance?.contractStartDate}" />
 										</g:if>
 										- Hasta:
 										<g:if test="${contractedPackInstance?.contractEndDate}">
-											<g:formatDate date="${contractedPackInstance?.contractEndDate}" />
+											<g:formatDate format="dd-MM-yyyy" date="${contractedPackInstance?.contractEndDate}" />
 										</g:if>
 									</span>
 								</div>

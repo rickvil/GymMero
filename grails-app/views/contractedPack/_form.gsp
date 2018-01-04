@@ -3,7 +3,7 @@
 <div class="panel-body bg-light">
 
 	<div class="section-divider mt20 mb40">
-		<span> Contratar un Pack</span>
+		<span>Pack</span>
 	</div>
 
 	<div class="media-body va-m">
@@ -111,22 +111,22 @@
 	
 	<div class="section row">
 		<div class="col-md-6">
-			<div class="fieldcontain ${hasErrors(bean: contractedPackInstance, field: 'contractEndDate', 'error')} required">
-				<label for="contractEndDate">
-					<g:message code="contractedPack.contractEndDate.label" default="Fecha inicio" />
+			<div class="fieldcontain ${hasErrors(bean: contractedPackInstance, field: 'contractStartDate', 'error')} required">
+				<label for="contractStartDate">
+					<g:message code="contractedPack.contractStartDate.label" default="Fecha inicio" />
 					<span class="required-indicator">*</span>
 				</label>
-				<g:datePicker name="contractEndDate" precision="day"  value="${contractedPackInstance?.contractEndDate}"  />
+				<g:datePicker name="contractStartDate" precision="day"  value="${contractedPackInstance?.contractStartDate}"  />
 			</div>
 		</div>
 	
 		<div class="col-md-6">
-			<div class="fieldcontain ${hasErrors(bean: contractedPackInstance, field: 'contractStartDate', 'error')} required">
-				<label for="contractStartDate">
-					<g:message code="contractedPack.contractStartDate.label" default="Fecha vencimiento" />
+			<div class="fieldcontain ${hasErrors(bean: contractedPackInstance, field: 'contractEndDate', 'error')} required">
+				<label for="contractEndDate">
+					<g:message code="contractedPack.contractEndDate.label" default="Fecha vencimiento" />
 					<span class="required-indicator">*</span>
 				</label>
-				<g:datePicker name="contractStartDate" precision="day"  value="${contractedPackInstance?.contractStartDate}"  />
+				<g:datePicker name="contractEndDate" precision="day"  value="${contractedPackInstance?.contractEndDate}"  />
 			</div>
 		</div>
 	</div>
