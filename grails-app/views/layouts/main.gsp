@@ -4,7 +4,7 @@
 <head>
 	<!-- Meta, title, CSS, favicons, etc. -->
 	<meta charset="utf-8">
-	<title>AbsoluteAdmin - A Responsive Bootstrap 3 Admin Dashboard Template</title>
+	<title>MeroGym</title>
 	<meta name="keywords" content="HTML5 Bootstrap 3 Admin Template UI Theme" />
 	<meta name="description" content="AbsoluteAdmin - A Responsive HTML5 Admin UI Framework">
 	<meta name="author" content="AbsoluteAdmin">
