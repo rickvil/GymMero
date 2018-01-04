@@ -51,7 +51,7 @@
 			<div class="fieldcontain ${hasErrors(bean: contractedPackInstance, field: 'barCode', 'error')} ">
 				<g:message code="contractedPack.barCode.label" default="Codigo de Barra" />
 				<label for="barCode" class="field prepend-icon">
-					<g:textField name="barCode" value="${contractedPackInstance?.barCode}" class="gui-input" />
+					<g:textField name="barCode" value="${contractedPackInstance?.barCode}" class="gui-input" readonly="readonly"/>
 					<label for="barCode" class="field-icon">
 						<i class="fa fa-barcode"></i>
 					</label>
