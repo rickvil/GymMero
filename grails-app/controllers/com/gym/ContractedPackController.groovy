@@ -22,6 +22,7 @@ class ContractedPackController {
     def create(User userInstance) {
         ContractedPack contractedPack = new ContractedPack(params)
         contractedPack.user = userInstance
+        contractedPack.contractEndDate = new Date() + 30
         respond contractedPack
     }
 
