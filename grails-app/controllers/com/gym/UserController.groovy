@@ -36,6 +36,8 @@ class UserController {
             return
         }
 
+        userInstance.name = userInstance.name.toUpperCase()
+        userInstance.lastName = userInstance.lastName.toUpperCase()
         userInstance.save flush:true
 
         request.withFormat {
@@ -66,6 +68,9 @@ class UserController {
             respond userInstance.errors, view:'edit'
             return
         }
+
+        userInstance.name = userInstance.name.toUpperCase()
+        userInstance.lastName = userInstance.lastName.toUpperCase()
 
         userInstance.save flush:true
 
