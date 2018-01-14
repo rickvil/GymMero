@@ -150,7 +150,6 @@
 										<tbody>
 
 										<g:each in="${contractedPackInstanceList}" status="i" var="contractedPackInstance">
-											%{--<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">--}%
 
 											<tr class="${(i % 2) == 0 ? 'even' : 'odd'}" style="${contractedPackInstance.debt == 0 ? '': 'color: red;'}">
 
