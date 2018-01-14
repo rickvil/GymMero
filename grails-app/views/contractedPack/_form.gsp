@@ -32,6 +32,8 @@
                     <g:select name="activity" from="${com.gym.Activity.list()}" multiple="multiple" optionKey="id" optionValue="title" size="10" value="${contractedPackInstance?.activity*.id}" class="many-to-many"/>
 					<i class="arrow double"></i>
 				</label>
+                <g:message code="contractedPack.activity.ctrl.label" default="Para seleccionar mas de 1 opción," /> <br/>
+                <g:message code="contractedPack.activity.ctrl1.label" default="presione la tecla Ctrl" />
 			</div>
 		</div>
 
@@ -42,6 +44,8 @@
                     <g:select name="typeActivity" from="${com.gym.TypeActivity.list()}" multiple="multiple" optionKey="id" optionValue="title" size="10" value="${contractedPackInstance?.typeActivity*.id}" class="many-to-many"/>
 					<i class="arrow double"></i>
 				</label>
+                <g:message code="contractedPack.typeActivity.ctrl.label" default="Para seleccionar mas de 1 opción," /> <br/>
+                <g:message code="contractedPack.typeActivity.ctrl1.label" default="presione la tecla Ctrl" />
 			</div>
 		</div>
 	</div>
