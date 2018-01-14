@@ -138,16 +138,21 @@
 
 											<g:sortableColumn property="free" title="${message(code: 'contractedPack.free.label', default: 'Libre')}" />
 
+											<g:sortableColumn property="price" title="${message(code: 'contractedPack.price.label', default: 'Pago')}" />
+
+											<g:sortableColumn property="debt" title="${message(code: 'contractedPack.debt.label', default: 'Adeuda')}" />
+
 											<g:sortableColumn property="contractEndDate" title="${message(code: 'contractedPack.contractEndDate.label', default: 'F.Vencimiento')}" />
 
 										</tr>
-
 
 										</thead>
 										<tbody>
 
 										<g:each in="${contractedPackInstanceList}" status="i" var="contractedPackInstance">
-											<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+											%{--<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">--}%
+
+											<tr class="${(i % 2) == 0 ? 'even' : 'odd'}" style="${contractedPackInstance.debt == 0 ? '': 'color: red;'}">
 
 												<td><g:link controller="contractedPack" action="show" id="${contractedPackInstance.id}"><g:formatDate format="dd-MM-yyyy" date="${contractedPackInstance?.contractStartDate}" /></g:link></td>
 
@@ -160,6 +165,10 @@
 												<td>${fieldValue(bean: contractedPackInstance, field: "credit")}</td>
 
 												<td><g:formatBoolean boolean="${contractedPackInstance.free}" /></td>
+
+												<td>$${fieldValue(bean: contractedPackInstance, field: "price")}</td>
+
+												<td>$${fieldValue(bean: contractedPackInstance, field: "debt")}</td>
 
 												<td><g:formatDate format="dd-MM-yyyy" date="${contractedPackInstance?.contractEndDate}" /></td>
 

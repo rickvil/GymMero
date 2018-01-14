@@ -8,6 +8,7 @@ class ContractedPack {
     Date contractEndDate
     Integer credit
     double price
+    double debt
     boolean free
     String comment
 
@@ -17,6 +18,7 @@ class ContractedPack {
         credit(nullable: true, size: 1..2, min: 0, max: 60)
         free(nullable: false)
         comment(nullable: true, size: 0..1000)
+        debt(nullable: true)
     }
 
     static hasMany = [

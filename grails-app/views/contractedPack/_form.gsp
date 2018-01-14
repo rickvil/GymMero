@@ -29,7 +29,7 @@
 			<div class="fieldcontain ${hasErrors(bean: contractedPackInstance, field: 'activity', 'error')}">
 				<g:message code="contractedPack.activity.label" default="Actividad" />
 				<label class="field">
-                    <g:select name="activity" from="${com.gym.Activity.list()}" multiple="multiple" optionKey="id" optionValue="title" size="10" value="${contractedPackInstance?.activity*.id}" class="many-to-many"/>
+                    <g:select name="activity" from="${com.gym.Activity.list()}" multiple="multiple" optionKey="id" optionValue="title" size="8" value="${contractedPackInstance?.activity*.id}" class="many-to-many"/>
 					<i class="arrow double"></i>
 				</label>
                 <g:message code="contractedPack.activity.ctrl.label" default="Para seleccionar mas de 1 opción," /> <br/>
@@ -41,7 +41,7 @@
 			<div class="fieldcontain ${hasErrors(bean: contractedPackInstance, field: 'typeActivity', 'error')} required">
 				<g:message code="contractedPack.typeActivity.label" default="Tipo de Actividad" />
 				<label class="field">
-                    <g:select name="typeActivity" from="${com.gym.TypeActivity.list()}" multiple="multiple" optionKey="id" optionValue="title" size="10" value="${contractedPackInstance?.typeActivity*.id}" class="many-to-many"/>
+                    <g:select name="typeActivity" from="${com.gym.TypeActivity.list()}" multiple="multiple" optionKey="id" optionValue="title" size="8" value="${contractedPackInstance?.typeActivity*.id}" class="many-to-many"/>
 					<i class="arrow double"></i>
 				</label>
                 <g:message code="contractedPack.typeActivity.ctrl.label" default="Para seleccionar mas de 1 opción," /> <br/>
@@ -63,7 +63,7 @@
 			</div>
 		</div>
 
-		<div class="col-md-6">
+		<div class="col-md-3">
 			<div class="fieldcontain ${hasErrors(bean: contractedPackInstance, field: 'credit', 'error')} ">
 				<g:message code="contractedPack.credit.label" default="Cantidad de Clases" />
 				<label for="credit" class="field prepend-icon">
@@ -74,20 +74,21 @@
 				</label>
 			</div>
 		</div>
+
+        <div class="col-md-3">
+            <div class="fieldcontain ${hasErrors(bean: contractedPackInstance, field: 'free', 'error')} ">
+                <div class="option-group field">
+                    <g:message code="contractedPack.credit.label" default=" ." />
+                    <label class="option block">
+                        <g:checkBox name="free" value="${contractedPackInstance?.free}" />
+                        <span class="checkbox"></span> free x 1 mes
+                    </label>
+                </div>
+            </div>
+        </div>
 	</div>
 
 	<div class="section row">
-		<div class="col-md-6">
-			<div class="fieldcontain ${hasErrors(bean: contractedPackInstance, field: 'free', 'error')} ">
-				<div class="option-group field">
-					<label class="option block">
-						<g:checkBox name="free" value="${contractedPackInstance?.free}" />
-						<span class="checkbox"></span> free x 1 mes
-					</label>
-				</div>
-			</div>
-		</div>
-
 		<div class="col-md-6">
 			<div class="fieldcontain ${hasErrors(bean: contractedPackInstance, field: 'price', 'error')} required">
 				<g:message code="contractedPack.price.label" default="Importe que paga" />
@@ -100,17 +101,17 @@
 			</div>
 		</div>
 
-	</div>
-
-	<div class="section row">
-		<div class="col-md-12">
-			<div class="fieldcontain ${hasErrors(bean: contractedPackInstance, field: 'comment', 'error')} ">
-				<label for="comment">
-					<g:message code="contractedPack.comment.label" default="Comentario" />
-				</label>
-				<g:textArea name="comment" cols="80" rows="5" maxlength="1000" value="${contractedPackInstance?.comment}"/>
-			</div>
-		</div>
+        <div class="col-md-6">
+            <div class="fieldcontain ${hasErrors(bean: contractedPackInstance, field: 'debt', 'error')} required">
+                <g:message code="contractedPack.debt.label" default="Importe que Adeuda" />
+                <label for="debt" class="field prepend-icon">
+                    <g:field name="debt" value="${fieldValue(bean: contractedPackInstance, field: 'debt')}" required="" class="gui-input" />
+                    <label for="debt" class="field-icon">
+                        <i class="fa fa-money"></i>
+                    </label>
+                </label>
+            </div>
+        </div>
 	</div>
 	
 	<div class="section row">
@@ -134,4 +135,15 @@
 			</div>
 		</div>
 	</div>
+
+    <div class="section row">
+        <div class="col-md-12">
+            <div class="fieldcontain ${hasErrors(bean: contractedPackInstance, field: 'comment', 'error')} ">
+                <label for="comment">
+                    <g:message code="contractedPack.comment.label" default="Comentario" />
+                </label>
+                <g:textArea name="comment" cols="80" rows="5" maxlength="1000" value="${contractedPackInstance?.comment}"/>
+            </div>
+        </div>
+    </div>
 </div>
