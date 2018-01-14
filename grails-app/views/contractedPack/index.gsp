@@ -26,9 +26,9 @@
 					
 						<th><g:message code="contractedPack.user.label" default="User" /></th>
 					
-						<th><g:message code="contractedPack.activity.label" default="Activity" /></th>
-					
-						<th><g:message code="contractedPack.typeActivity.label" default="Type Activity" /></th>
+						%{--<th><g:message code="contractedPack.activity.label" default="Activity" /></th>--}%
+
+						%{--<th><g:message code="contractedPack.typeActivity.label" default="Type Activity" /></th>--}%
 					
 						<g:sortableColumn property="barCode" title="${message(code: 'contractedPack.barCode.label', default: 'Bar Code')}" />
 					
@@ -44,9 +44,9 @@
 					
 						<td><g:link action="show" id="${contractedPackInstance.id}">${fieldValue(bean: contractedPackInstance, field: "user")}</g:link></td>
 					
-						<td>${fieldValue(bean: contractedPackInstance, field: "activity")}</td>
-					
-						<td>${fieldValue(bean: contractedPackInstance, field: "typeActivity")}</td>
+						%{--<td>${fieldValue(bean: contractedPackInstance, field: "activity")}</td>--}%
+
+						%{--<td>${fieldValue(bean: contractedPackInstance, field: "typeActivity")}</td>--}%
 					
 						<td>${fieldValue(bean: contractedPackInstance, field: "barCode")}</td>
 					

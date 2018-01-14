@@ -26,10 +26,10 @@
 	</div>
 	<div class="section row">
 		<div class="col-md-6">
-			<div class="fieldcontain ${hasErrors(bean: contractedPackInstance, field: 'activity', 'error')} required">
+			<div class="fieldcontain ${hasErrors(bean: contractedPackInstance, field: 'activity', 'error')}">
 				<g:message code="contractedPack.activity.label" default="Actividad" />
-				<label class="field select">
-					<g:select id="activity" name="activity.id" from="${com.gym.Activity.list()}" optionKey="id" optionValue="title" required="" value="${contractedPackInstance?.activity?.id}" class="many-to-one"/>
+				<label class="field">
+                    <g:select name="activity" from="${com.gym.Activity.list()}" multiple="multiple" optionKey="id" optionValue="title" size="10" value="${contractedPackInstance?.activity*.id}" class="many-to-many"/>
 					<i class="arrow double"></i>
 				</label>
 			</div>
@@ -38,8 +38,8 @@
 		<div class="col-md-6">
 			<div class="fieldcontain ${hasErrors(bean: contractedPackInstance, field: 'typeActivity', 'error')} required">
 				<g:message code="contractedPack.typeActivity.label" default="Tipo de Actividad" />
-				<label class="field select">
-					<g:select id="typeActivity" name="typeActivity.id" from="${com.gym.TypeActivity.list()}" optionKey="id" optionValue="title" required="" value="${contractedPackInstance?.typeActivity?.id}" class="many-to-one"/>
+				<label class="field">
+                    <g:select name="typeActivity" from="${com.gym.TypeActivity.list()}" multiple="multiple" optionKey="id" optionValue="title" size="10" value="${contractedPackInstance?.typeActivity*.id}" class="many-to-many"/>
 					<i class="arrow double"></i>
 				</label>
 			</div>
