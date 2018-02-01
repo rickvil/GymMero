@@ -8,25 +8,21 @@
 
     <style type="text/css">
     /* Take care of image borders and formatting, client hacks */
-    img {
-        max-width: 600px;
-        outline: none;
-        text-decoration: none;
-        -ms-interpolation-mode: bicubic;
-    }
+    /*img {*/
+        /*max-width: 600px;*/
+        /*outline: none;*/
+        /*text-decoration: none;*/
+        /*-ms-interpolation-mode: bicubic;*/
+    /*}*/
 
-    a img {
-        border: none;
-    }
+    /*a img {*/
+        /*border: none;*/
+    /*}*/
 
     table {
         /*border-collapse: collapse !important;*/
         border-spacing: 10px;
         border-collapse: separate;
-    }
-
-    table td {
-        border-collapse: collapse;
     }
 
     .ExternalClass * {
@@ -49,14 +45,15 @@
         color: #676767;
     }
 
-    td {
-        font-family: Helvetica, Arial, sans-serif;
-        font-size: 14px;
-        color: #777777;
-        text-align: center;
-        line-height: 21px;
-        padding: 10px;
-    }
+    /*td {*/
+        /*font-family: Helvetica, Arial, sans-serif;*/
+        /*font-size: 14px;*/
+        /*color: #777777;*/
+        /*text-align: center;*/
+        /*line-height: 21px;*/
+        /*padding: 10px;*/
+        /*border-collapse: collapse;*/
+    /*}*/
 
     a {
         color: #676767;
@@ -64,28 +61,32 @@
     }
 
     .header-sm {
-        font-size: 32px;
+        padding: 5px 0;
+        font-size: 14px;
+        line-height: 1.3;
         font-weight: 600;
-        line-height: normal;
-        padding: 35px 0 0;
-        color: #4d4d4d;
+        color: #2cff38;
     }
 
-
-    .header-sm {
-        padding: 5px 0;
-        font-size: 18px;
+    .description {
+        font-size: 10px;
         line-height: 1.3;
     }
 
     .credential{
-        border: 5px solid #e5e5e5;
+        border: 5px solid #676767;
         border-radius: 10px;
         background-color: #ffffff;
         text-align: left;
         width: 50%;
-        height: 150px;
+        height: 120px;
         padding: 12px 15px 15px;
+        font-size: 12px;
+    }
+
+    .lettermin{
+        font-size: 6px;
+        text-align: center !important;
     }
 
     </style>
@@ -108,21 +109,55 @@
 <body bgcolor="#f7f7f7">
 <table width="100%">
     <tr>
+
         <td class="credential">
-            <span class="header-sm">Merito: ${contractedPack.user.name} ${contractedPack.user.lastName} </span><br/>
-            Actividad: ${contractedPack.activity.title} <br/>
-            Tipo de Actividad: ${contractedPack.typeActivity.title} <br/>
-            Desde: <g:formatDate format="dd-MM-yyyy" date="${contractedPack.contractStartDate}" />
-            -
-            Hasta: <g:formatDate format="dd-MM-yyyy" date="${contractedPack.contractEndDate}" /><br/><br/>
-            <div><g:img dir="barCode" file="showBarcode?barcode=${contractedPack.barCode}" style="width: 300px; height: 30px;"/></div>
+            <table>
+                <tr>
+                    <td>
+                        <img src="${resource(file:'logo.jpg')}" alt="logo" style="width: 100px; margin:2px auto;display:block;">
+                    </td>
+                    <td>
+                        <span class="header-sm">MERITO: ${contractedPack.user.lastName}, ${contractedPack.user.name} </span><br/>
+                        <span class="header-sm" style="font-size: x-small">${contractedPack.user.dni}</span><br/><br/>
+                        <span style="color: blue">PACKS: </span>
+                        <span class="description" style="color: blue">${contractedPack.activity.title}</span><br/>
+                        <span class="description" style="color: blue">${contractedPack.typeActivity.title}</span><br/><br/>
+                        <span style="color: red">VALIDO: </span>
+                        <span class="description" style="color: red"><g:formatDate format="dd-MM-yyyy" date="${contractedPack.contractStartDate}" />
+                            /
+                            <g:formatDate format="dd-MM-yyyy" date="${contractedPack.contractEndDate}" /></span>
+                    </td>
+                </tr>
+            </table>
+            <center>
+                <div><g:img dir="barCode" file="showBarcode?barcode=${contractedPack.barCode}" style="width: 200px; height: 30px;"/></div>
+                <span style="font-size: xx-small; color:black">${contractedPack.barCode}</span>
+            </center>
+
         </td>
         <td class="credential">
-            <span class="header-sm">Date Shipped</span><br/>
-            January 12, 2015 <br/>
+            <span>
+                <img src="${resource(file:'facebook.png')}" style="width: 20px"> /BAILAMERO
+            </span><br/>
+            <span>
+                <img src="${resource(file:'whatsapp.png')}" style="width: 20px"> +5493884297472
+            </span><br/>
+            <span>
+                <img src="${resource(file:'gmaps.png')}" style="width: 20px"> Juana Manuela Gorriti 127 - San Salvador de Jujuy
+            </span><br/>
             <br/>
-            <span class="header-sm">Order</span> <br/>
-            #12342
+            <br/>
+            <center>
+                <span class="lettermin" style="color:black">
+                    LAS CUOTAS SON PERSONALES Y NO REINTEGRABLES.
+                    NO SE RECUPERAN CLASES, EXCEPTO POR AUSENCIA DEL INSTRUCTOR O PARTICULAR DEL GYM.
+                    ABONAR EN TIEMPO Y FORMA.
+                    NO VENIR CON NIÑOS.
+                    FERIADOS NACIONALES CERRADOS Y PROVINCIALES ABIERTO DE 18hs A 21hs MUSC.
+                    MERO GYM NO SE RESPONSABILIZA POR LA PERDIDA DE OBJETOS PERSONALES.
+                    GRACIAS
+                </span>
+            </center>
         </td>
     </tr>
 </table>

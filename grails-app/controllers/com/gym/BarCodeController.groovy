@@ -17,7 +17,7 @@ class BarCodeController {
 
     def showBarcode(String barcode) {
         println("en el showbarcode: " + barcode)
-        String value = '0123456789'
+        String value = barcode
         BufferedImage barcodeImg = null
         Code39Bean bean = new Code39Bean()
         final int dpi = 600
