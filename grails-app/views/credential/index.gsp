@@ -14,34 +14,15 @@
             display: none !important;
         }
     }
-    /* Take care of image borders and formatting, client hacks */
-    /*img {*/
-        /*max-width: 600px;*/
-        /*outline: none;*/
-        /*text-decoration: none;*/
-        /*-ms-interpolation-mode: bicubic;*/
-    /*}*/
-
-    /*a img {*/
-        /*border: none;*/
-    /*}*/
 
     table {
-        /*border-collapse: collapse !important;*/
         border-spacing: 10px;
         border-collapse: separate;
     }
 
-    .ExternalClass * {
-        line-height: 115%;
-    }
+    .ExternalClass * { line-height: 115%; }
 
-
-
-    /* General styling */
-    * {
-        font-family: Helvetica, Arial, sans-serif;
-    }
+    * { font-family: Helvetica, Arial, sans-serif; }
 
     body {
         -webkit-font-smoothing: antialiased;
@@ -51,16 +32,6 @@
         height: 100%;
         color: #676767;
     }
-
-    /*td {*/
-        /*font-family: Helvetica, Arial, sans-serif;*/
-        /*font-size: 14px;*/
-        /*color: #777777;*/
-        /*text-align: center;*/
-        /*line-height: 21px;*/
-        /*padding: 10px;*/
-        /*border-collapse: collapse;*/
-    /*}*/
 
     a {
         color: #676767;
@@ -99,15 +70,15 @@
     </style>
 
     <style type="text/css" media="screen">
-    @import url(http://fonts.googleapis.com/css?family=Oxygen:400,700);
+        @import url(http://fonts.googleapis.com/css?family=Oxygen:400,700);
     </style>
 
     <style type="text/css" media="screen">
-    @media screen {
-        * {
-            font-family: 'Oxygen', 'Helvetica Neue', 'Arial', 'sans-serif' !important;
+        @media screen {
+            * {
+                font-family: 'Oxygen', 'Helvetica Neue', 'Arial', 'sans-serif' !important;
+            }
         }
-    }
     </style>
 
 </head>
