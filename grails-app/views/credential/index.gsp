@@ -166,7 +166,9 @@
 </center>
 
 <center>
+    <br/>
     <button type="button" onclick="window.print();" class='no-print'>Imprimir</button>
+    <button type="button" onclick="window.close();" class='no-print'>Cerrar</button>
 </center>
 </body>
 </html>
