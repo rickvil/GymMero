@@ -114,7 +114,8 @@
             <table>
                 <tr>
                     <td>
-                        <img src="${resource(file:'logo.jpg')}" alt="logo" style="width: 100px; margin:2px auto;display:block;">
+                        %{--<img src="${resource(file:'logo.jpg')}" alt="logo" style="width: 100px; margin:2px auto;display:block;"/>--}%
+                        <rendering:inlineJpeg bytes="${logo}" style="width: 100px; margin:2px auto;display:block;"/>
                     </td>
                     <td>
                         <span class="header-sm">MERITO: ${contractedPack.user.lastName}, ${contractedPack.user.name} </span><br/>
@@ -137,13 +138,16 @@
         </td>
         <td class="credential">
             <span>
-                <img src="${resource(file:'facebook.png')}" style="width: 20px"/> /BAILAMERO
+                %{--<img src="${resource(file:'facebook.png')}" style="width: 20px"/> /BAILAMERO--}%
+                <rendering:inlinePng bytes="${facebook}" style="width: 20px"/> /BAILAMERO
             </span><br/>
             <span>
-                <img src="${resource(file:'whatsapp.png')}" style="width: 20px"/> +5493884297472
+                %{--<img src="${resource(file:'whatsapp.png')}" style="width: 20px"/> +5493884297472--}%
+                <rendering:inlinePng bytes="${wtps}" style="width: 20px"/> +5493884297472
             </span><br/>
             <span>
-                <img src="${resource(file:'gmaps.png')}" style="width: 20px"/> Juana Manuela Gorriti 127 - San Salvador de Jujuy
+                %{--<img src="${resource(file:'gmaps.png')}" style="width: 20px"/> Juana Manuela Gorriti 127 - San Salvador de Jujuy--}%
+                <rendering:inlinePng bytes="${map}" style="width: 20px"/> Juana Manuela Gorriti 127 - San Salvador de Jujuy
             </span><br/>
             <br/>
             <br/>
