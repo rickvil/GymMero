@@ -3,10 +3,10 @@ package com.gym
 class CredentialController {
 
     def assetResourceLocator
-    def index() {
-        println("cargando credential")
-        ContractedPack contractedPack = ContractedPack.get(2)
-        respond contractedPack.user, model:[contractedPack: contractedPack]
+    def index(ContractedPack contractedPackInstance) {
+        println("cargando credential: " + contractedPackInstance.user.name)
+
+        respond contractedPackInstance.user, model:[contractedPack: contractedPackInstance]
 
 //        def logo = assetResourceLocator.findAssetForURI("logo.jpg")
 //        def facebook = assetResourceLocator.findAssetForURI("facebook.png")

@@ -12,11 +12,9 @@ class BarCodeController {
 
     def index() {
         println("en el controller")
-
     }
 
     def showBarcode(String barcode) {
-        println("en el showbarcode: " + barcode)
         String value = barcode
         BufferedImage barcodeImg = null
         Code39Bean bean = new Code39Bean()

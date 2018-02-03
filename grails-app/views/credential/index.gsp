@@ -7,6 +7,13 @@
     <title>Credencial Única e instransferible</title>
 
     <style type="text/css">
+    @media print
+    {
+        .no-print, .no-print *
+        {
+            display: none !important;
+        }
+    }
     /* Take care of image borders and formatting, client hacks */
     /*img {*/
         /*max-width: 600px;*/
@@ -103,7 +110,6 @@
     }
     </style>
 
-
 </head>
 
 <body bgcolor="#f7f7f7">
@@ -161,5 +167,8 @@
         </td>
     </tr>
 </table>
+<center>
+    <button type="button" onclick="window.print();" class='no-print'>Imprimir</button>
+</center>
 </body>
 </html>
