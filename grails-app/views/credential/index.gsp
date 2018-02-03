@@ -85,6 +85,11 @@
 </head>
 
 <body bgcolor="#f7f7f7">
+<center>
+    <span class="lettermin" style="color:black">
+        _________________________________________________________________________________________________________________________________________________________________________________________________________________
+    </span>
+</center>
 <table width="100%">
     <tr>
 
@@ -110,7 +115,7 @@
             </table>
             <center>
                 <div><g:img dir="barCode" file="showBarcode?barcode=${contractedPack.barCode}" style="width: 200px; height: 30px;"/></div>
-                <span style="font-size: xx-small; color:black">${contractedPack.barCode}</span>
+                <span style="font-size: xx-small; color:black">${barCodeComplete}</span>
             </center>
 
         </td>
@@ -154,6 +159,12 @@
         </td>
     </tr>
 </table>
+<center>
+    <span class="lettermin" style="color:black">
+        _________________________________________________________________________________________________________________________________________________________________________________________________________________
+    </span>
+</center>
+
 <center>
     <button type="button" onclick="window.print();" class='no-print'>Imprimir</button>
 </center>

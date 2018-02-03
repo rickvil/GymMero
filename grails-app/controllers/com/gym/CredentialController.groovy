@@ -5,8 +5,9 @@ class CredentialController {
     def assetResourceLocator
     def index(ContractedPack contractedPackInstance) {
         println("cargando credential: " + contractedPackInstance.user.name)
+        String barCodeComplete = String.format("%014d", Integer.parseInt(contractedPackInstance.barCode));
 
-        respond contractedPackInstance.user, model:[contractedPack: contractedPackInstance]
+        respond contractedPackInstance.user, model:[contractedPack: contractedPackInstance, barCodeComplete: barCodeComplete]
 
 //        def logo = assetResourceLocator.findAssetForURI("logo.jpg")
 //        def facebook = assetResourceLocator.findAssetForURI("facebook.png")

@@ -22,6 +22,11 @@ class ContractedPackController {
     def create(User userInstance) {
         ContractedPack contractedPack = new ContractedPack(params)
         contractedPack.user = userInstance
+
+        def lastRecord = ContractedPack.list(max: 1, sort: "id", order: "desc")
+        String lastId = lastRecord ? (lastRecord.get(0).id + 1).toString() : '0'
+        contractedPack.barCode = lastId
+
         contractedPack.contractEndDate = new Date() + 30
         respond contractedPack
     }
