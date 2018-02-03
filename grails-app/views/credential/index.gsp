@@ -20,7 +20,7 @@
         border-collapse: separate;
     }
 
-    .ExternalClass * { line-height: 115%; }
+    /*.ExternalClass * { line-height: 115%; }*/
 
     * { font-family: Helvetica, Arial, sans-serif; }
 
@@ -43,7 +43,8 @@
         font-size: 14px;
         line-height: 1.3;
         font-weight: 600;
-        color: #2cff38;
+        color: #000;
+        text-decoration: underline;
     }
 
     .description {
@@ -57,8 +58,8 @@
         background-color: #ffffff;
         text-align: left;
         width: 50%;
-        height: 120px;
-        padding: 12px 15px 15px;
+        height: 100px;
+        padding: 3px 3px 3px;
         font-size: 12px;
     }
 
@@ -94,7 +95,8 @@
                         <img src="${resource(file:'logo.jpg')}" alt="logo" style="width: 100px; margin:2px auto;display:block;">
                     </td>
                     <td>
-                        <span class="header-sm">MERITO: ${contractedPack.user.lastName}, ${contractedPack.user.name} </span><br/>
+                        <span class="header-sm">MERITO: </span>
+                        <span class="header-sm" style="font-size: x-small">${contractedPack.user.lastName}, ${contractedPack.user.name} </span><br/>
                         <span class="header-sm" style="font-size: x-small">${contractedPack.user.dni}</span><br/><br/>
                         <span style="color: blue">PACKS: </span>
                         <span class="description" style="color: blue">${contractedPack.activity.title}</span><br/>
@@ -114,15 +116,17 @@
         </td>
         <td class="credential">
             <span>
-                <img src="${resource(file:'facebook.png')}" style="width: 20px"/> /BAILAMERO
+                <img src="${resource(file:'facebook.png')}" style="width: 20px"/>
+                <span class="description"> /BAILAMERO</span>
             </span><br/>
             <span>
-                <img src="${resource(file:'whatsapp.png')}" style="width: 20px"/> +5493884297472
+                <img src="${resource(file:'whatsapp.png')}" style="width: 20px"/>
+                <span class="description"> +5493884297472</span>
             </span><br/>
             <span>
-                <img src="${resource(file:'gmaps.png')}" style="width: 20px"/> Juana Manuela Gorriti 127 - San Salvador de Jujuy
+                <img src="${resource(file:'gmaps.png')}" style="width: 20px"/>
+                <span class="description"> Juana Manuela Gorriti 127 - San Salvador de Jujuy</span>
             </span><br/>
-            <br/>
             <br/>
             <center>
                 <span class="lettermin" style="color:black">
@@ -133,6 +137,18 @@
                     FERIADOS NACIONALES CERRADOS Y PROVINCIALES ABIERTO DE 18hs A 21hs MUSC.
                     MERO GYM NO SE RESPONSABILIZA POR LA PERDIDA DE OBJETOS PERSONALES.
                     GRACIAS
+                </span>
+            </center>
+            <br/>
+            <br/>
+            <br/>
+            <center>
+                <span class="lettermin" style="color:black">
+                    ____________________________
+                </span>
+                <br/>
+                <span class="lettermin" style="color:black">
+                    FIRMA DEL SOCIO
                 </span>
             </center>
         </td>
