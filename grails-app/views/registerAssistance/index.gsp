@@ -46,11 +46,9 @@
         <!-- Begin: Content -->
         <section id="content">
 
-            %{--<a href="dashboard.html" class="" title="home"><img src="assets/img/logos/logo_white.png" title="AdminDesigns Logo" class="img-responsive w200 ml10"></a>--}%
-
             <div class="admin-form theme-info" id="login1" style="margin-top: 6%;">
 
-                <div id="counter">12</div>
+                <div id="counter"></div>
 
                 <h1 class="coming-soon-title"> We're Getting Ready To Launch!</h1>
                 <div class="panel panel-info bw10">
@@ -99,7 +97,6 @@
 
 <!-- CanvasBG Plugin(creates mousehover effect) -->
 <asset:javascript src="vendor/plugins/canvasbg/canvasbg.js"/>
-%{--<script src="vendor/plugins/canvasbg/canvasbg.js"></script>--}%
 
 <!-- Theme Javascript -->
 <asset:javascript src="assets/js/utility/utility.js"/>
