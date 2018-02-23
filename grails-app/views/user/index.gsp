@@ -22,6 +22,36 @@
 			</div>
 
 		</header>
+	<div class="col-md-12">
+		<div class="col-md-3">
+			<div class="section">
+				<div class="smart-widget sm-right smr-50">
+					<g:form url="[action:'findDni']">
+						<label class="field">
+							<input type="text" name="findDni" id="findDni" class="gui-input" placeholder="Buscar por DNI" value="${findDni}" style="text-transform:uppercase">
+						</label>
+						<button type="submit" class="button btn-primary">
+							<i class="fa fa-search"></i>
+						</button>
+					</g:form>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="section">
+				<div class="smart-widget sm-right smr-50">
+					<g:form url="[action:'findLastName']" >
+						<label class="field">
+							<input type="text" name="findLastName" id="findLastName" class="gui-input" placeholder="Buscar por Apellido" value="${findLastName}" style="text-transform:uppercase">
+						</label>
+						<button type="submit" class="button btn-primary">
+							<i class="fa fa-search"></i>
+						</button>
+					</g:form>
+				</div>
+			</div>
+		</div>
+	</div>
 		<!-- End: Topbar -->
 
 		<div class="col-md-12">
@@ -73,6 +103,32 @@
 					<div class="pagination">
 						<g:paginate total="${userInstanceCount ?: 0}" />
 					</div>
+					%{--<div class="dataTables_paginate paging_simple_numbers" id="datatable6_paginate">--}%
+						%{--<ul class="pagination">--}%
+							%{--<li class="paginate_button previous disabled" aria-controls="datatable6" tabindex="0" id="datatable6_previous">--}%
+								%{--<a href="#">Previous</a>--}%
+							%{--</li>--}%
+							%{--<li class="paginate_button active" aria-controls="datatable6" tabindex="0">--}%
+								%{--<a href="#">1</a>--}%
+							%{--</li>--}%
+							%{--<li class="paginate_button next disabled" aria-controls="datatable6" tabindex="0" id="datatable6_next">--}%
+								%{--<a href="#">Next</a>--}%
+							%{--</li>--}%
+						%{--</ul>--}%
+					%{--</div>--}%
+
+					%{--<div class="pagination">--}%
+						%{--<a href="/GymMero/user/index?offset=0&amp;max=10" class="prevLink">Anterior</a>--}%
+						%{--<a href="/GymMero/user/index?offset=10&amp;max=10" class="step">1</a>--}%
+						%{--<span class="currentStep">2</span>--}%
+						%{--<a href="/GymMero/user/index?offset=10&amp;max=10" class="step">2</a>--}%
+						%{--<a href="/GymMero/user/index?offset=10&amp;max=10" class="nextLink">Siguiente</a>--}%
+					%{--</div>--}%
+					%{--<div class="pagination">--}%
+						%{--<a href="/GymMero/user/index?offset=0&amp;max=10" class="prevLink">Anterior</a>--}%
+						%{--<a href="/GymMero/user/index?offset=0&amp;max=10" class="step">1</a>--}%
+						%{--<span class="currentStep">2</span>--}%
+					%{--</div>--}%
 				</div>
 			</div>
 		</div>

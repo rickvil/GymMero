@@ -15,6 +15,28 @@ class UserController {
         respond User.list(params), model:[userInstanceCount: User.count()]
     }
 
+    def findDni(String findDni) {
+        println("findDni: " + findDni)
+        if (findDni){
+            params.max = Math.min(10, 100)
+            respond User.findAllByDniLike("%"+findDni+"%", params), model:[userInstanceCount: 1, findDni: findDni], view:'index'
+        }else{
+            params.max = Math.min(10, 100)
+            respond User.list(params), model:[userInstanceCount: User.count()], view:'index'
+        }
+    }
+
+    def findLastName(String findLastName) {
+        println("findLastName: " + findLastName)
+        if (findLastName){
+            params.max = Math.min(40, 100)
+            respond User.findAllByLastNameLike("%"+findLastName+"%", params), model:[userInstanceCount: 1, findLastName: findLastName], view:'index'
+        }else{
+            params.max = Math.min(10, 100)
+            respond User.list(params), model:[userInstanceCount: User.count()], view:'index'
+        }
+    }
+
     def show(User userInstance) {
         def contractedPackInstanceList = ContractedPack.findAllByUser(userInstance)
         respond userInstance, model:[contractedPackInstanceList: contractedPackInstanceList]
