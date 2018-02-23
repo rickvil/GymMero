@@ -20925,7 +20925,7 @@ body.external-page {
 }
 body.external-page #main {
   overflow: hidden;
-  background: url("../../../img/patterns/backgrounds/1.jpg") no-repeat top center #2d494d;
+  background: url("../../../img/patterns/backgrounds/1.jpg") no-repeat top center #ee08fa;
 }
 body.external-page #main:before {
   display: none;
