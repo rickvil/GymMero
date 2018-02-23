@@ -43,7 +43,7 @@
         font-size: 14px;
         line-height: 1.3;
         font-weight: 600;
-        color: #000;
+        color: #00e600;
         text-decoration: underline;
     }
 
@@ -53,7 +53,7 @@
     }
 
     .credential{
-        border: 5px solid #676767;
+        border: 5px solid #00e600;
         border-radius: 10px;
         background-color: #ffffff;
         text-align: left;
@@ -115,7 +115,7 @@
             </table>
             <center>
                 <div><g:img dir="barCode" file="showBarcode?barcode=${contractedPack.barCode}" style="width: 200px; height: 30px;"/></div>
-                <span style="font-size: xx-small; color:black">${barCodeComplete}</span>
+                <span style="font-size: xx-small; color:#ff334b">${barCodeComplete}</span>
             </center>
 
         </td>
@@ -131,6 +131,10 @@
             <span>
                 <img src="${resource(file:'gmaps.png')}" style="width: 20px"/>
                 <span class="description"> Juana Manuela Gorriti 127 - San Salvador de Jujuy</span>
+            </span><br/>
+            <span>
+                <img src="${resource(file:'email.png')}" style="width: 20px"/>
+                <span class="description"> merogym@hotmail.com</span>
             </span><br/>
             <br/>
             <center>
@@ -164,6 +168,82 @@
         _________________________________________________________________________________________________________________________________________________________________________________________________________________
     </span>
 </center>
+
+<g:if test="${!contractedPack.user.over18Years}">
+    <div>
+        <table width="100%">
+            <tr>
+                <td class="credential">
+                    <center>
+                        <h3>Terminos y condiciones para los Socios menores de Edad</h3>
+                    </center>
+                    <span class="lettermin" style="color:black">
+                        * GymMero no se responsabiliza por la perdida de los objetos en el local
+                    </span>
+                    <br/>
+                    <span class="lettermin" style="color:black">
+                        * Las clases no tomadas por el socio, no se recuperan
+                    </span>
+                    <br/>
+                    <span class="lettermin" style="color:black">
+                        * El socio y su tutor desligan de toda responsabilidad sobre inconvenientes que sucedan en las intalaciones
+                    </span>
+                    <br/>
+                    <span class="lettermin" style="color:black">
+                        * Yo tutor, entiendo y comprendo todo los terminos enunciados
+                    </span>
+                    <br/>
+                    <span class="lettermin" style="color:black">
+                        * Como tutor/ responsable del menor, doy concentimiento para asistir a todas las clases contratadas
+                    </span>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <center>
+                        <table>
+                            <tr>
+                                <td>
+                                    <center>
+                                    <span class="lettermin" style="color:black">
+                                        ____________________________
+                                    </span>
+
+                                    <br/>
+                                    <span class="lettermin" style="color:black">
+                                        FIRMA DEL SOCIO
+                                    </span>
+                                    </center>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <center>
+                                    <span class="lettermin" style="color:black">
+                                        ____________________________
+                                    </span>
+
+                                    <br/>
+                                    <span class="lettermin" style="color:black">
+                                        FIRMA DEL TUTOR
+                                    </span>
+                                    </center>
+                                </td>
+                            </tr>
+                        </table>
+                    </center>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <center>
+        <span class="lettermin" style="color:black">
+            _________________________________________________________________________________________________________________________________________________________________________________________________________________
+        </span>
+    </center>
+</g:if>
 
 <center>
     <br/>

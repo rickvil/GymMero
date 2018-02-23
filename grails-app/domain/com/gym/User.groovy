@@ -23,4 +23,28 @@ class User {
         email(nullable: true, email: true, size: 0..50)
         active(nullable: false)
     }
+
+    def Integer getEdad() {
+        if (birthday) {
+            return Math.floor((new Date() - birthday) / 365)
+        } else {
+            return null;
+        }
+    }
+
+    Boolean isOver16Years() {
+        def age = getEdad()
+        if (!age || age < 16) {
+            return false
+        }
+        return true
+    }
+
+    Boolean isOver18Years() {
+        def age = getEdad()
+        if (!age || age < 18) {
+            return false
+        }
+        return true
+    }
 }
