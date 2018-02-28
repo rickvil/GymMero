@@ -5,7 +5,7 @@
 <head>
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
-    <title>AbsoluteAdmin - A Responsive Bootstrap 3 Admin Dashboard Template</title>
+    <title>MeroGym</title>
     <meta name="keywords" content="HTML5 Bootstrap 3 Admin Template UI Theme" />
     <meta name="description" content="AbsoluteAdmin - A Responsive HTML5 Admin UI Framework">
     <meta name="author" content="AbsoluteAdmin">
@@ -21,14 +21,23 @@
     <asset:stylesheet src="assets/admin-tools/admin-forms/css/admin-forms.min.css"/>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/img/favicon.ico">
+    <link rel="shortcut icon" href="${resource(file:'favicon.ico')}" type="image/x-icon" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
    <![endif]-->
-</head>
+
+    <style type="text/css">
+        .textColor {
+            color: #00e600 !important;
+            font-weight: bold !important;
+            text-align: center;
+        }
+    </style>
+
+    </head>
 
 <body class="external-page sb-l-c sb-r-c">
 
@@ -46,28 +55,31 @@
         <!-- Begin: Content -->
         <section id="content">
 
+
             <div class="admin-form theme-info" id="login1" style="margin-top: 6%;">
+                <img src="${resource(file:'logo.jpg')}" alt="logo" style="width: 20%; margin:auto;display:block;">
 
-                <div id="counter"></div>
-
-                <h1 class="coming-soon-title"> We're Getting Ready To Launch!</h1>
+                %{--<div id="counter"></div>--}%
+                <h1 class="coming-soon-title textColor">Bienvenido a Mero Gym</h1>
+                <br/>
+                <h2 class="textColor">Registre su Asistencia con el lector de Credencial</h2>
                 <div class="panel panel-info bw10">
 
                     <!-- end .form-header section -->
                     <form method="post" action="/" id="contact">
                         <div class="panel-menu">
                             <div class="row">
-                                <div class="col-md-9">
+                                <div class="col-md-12">
                                     <label for="password" class="field prepend-icon">
-                                        <input type="text" name="password" id="password" class="gui-input" placeholder="Your Email Address">
-                                        <label for="password" class="field-icon">
-                                            <i class="fa fa-envelope-o"></i>
-                                        </label>
+                                        <input type="text" name="password" id="password" class="gui-input" placeholder="Código de Credencial">
+                                        %{--<label for="password" class="field-icon">--}%
+                                            %{--<i class="fa fa-envelope-o"></i>--}%
+                                        %{--</label>--}%
                                     </label>
                                 </div>
-                                <div class="col-md-3">
-                                    <button type="submit" class="button btn-info mr10 btn-block">Notify</button>
-                                </div>
+                                %{--<div class="col-md-3">--}%
+                                    %{--<button type="submit" class="button btn-info mr10 btn-block">Notify</button>--}%
+                                %{--</div>--}%
                             </div>
                         </div>
                         <!-- end .form-body section -->

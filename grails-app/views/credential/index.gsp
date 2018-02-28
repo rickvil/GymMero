@@ -134,7 +134,7 @@
             </span><br/>
             <span>
                 <img src="${resource(file:'email.png')}" style="width: 20px"/>
-                <span class="description"> merogym@hotmail.com</span>
+                <span class="description"> merogymfitnessjujuy@hotmail.com</span>
             </span><br/>
             <br/>
             <center>

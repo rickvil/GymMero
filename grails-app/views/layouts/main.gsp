@@ -902,6 +902,12 @@
 					<a href="${createLink(uri: '/user')}">
 						<span class="fa fa-user"></span>
 						<span class="sidebar-title">Mero Socios</span>
+					</a>
+				</li>
+				<li>
+					<a href="${createLink(uri: '/registerAssistance')}" target="_blank">
+						<span class="fa fa-user"></span>
+						<span class="sidebar-title">Registrar Asistencia</span>
 						<span class="sidebar-title-tray">
 							<span class="label label-xs bg-primary">New</span>
 						</span>
