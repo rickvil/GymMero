@@ -104,8 +104,8 @@
 <asset:javascript src="vendor/jquery/jquery_ui/jquery-ui.min.js"/>
 
 <!-- Countdown Plugin -->
-<script src="vendor/plugins/countdown/jquery.plugin.min.js"></script>
-<script src="vendor/plugins/countdown/jquery.countdown.min.js"></script>
+%{--<script src="vendor/plugins/countdown/jquery.plugin.min.js"></script>--}%
+%{--<script src="vendor/plugins/countdown/jquery.countdown.min.js"></script>--}%
 
 <!-- CanvasBG Plugin(creates mousehover effect) -->
 <asset:javascript src="vendor/plugins/canvasbg/canvasbg.js"/>
@@ -136,11 +136,11 @@
         });
 
         // Init Countdown Plugin
-        var newYear = new Date();
-        newYear = new Date(2015, 6, 0);
-        $('#counter').countdown({
-            until: newYear
-        });
+//        var newYear = new Date();
+//        newYear = new Date(2015, 6, 0);
+//        $('#counter').countdown({
+//            until: newYear
+//        });
 
         // For further documentation, settings, and examples
         // see http://keith-wood.name/countdownRef.html
