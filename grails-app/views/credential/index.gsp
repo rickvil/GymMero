@@ -106,10 +106,8 @@
                         <span style="color: blue">PACKS: </span>
                         <span class="description" style="color: blue">${contractedPack.activity.title}</span><br/>
                         <span class="description" style="color: blue">${contractedPack.typeActivity.title}</span><br/><br/>
-                        <span style="color: red">VALIDO: </span>
-                        <span class="description" style="color: red"><g:formatDate format="dd-MM-yyyy" date="${contractedPack.contractStartDate}" />
-                            /
-                            <g:formatDate format="dd-MM-yyyy" date="${contractedPack.contractEndDate}" /></span>
+                        <span style="color: red">VALIDO HASTA: </span>
+                        <span class="description" style="color: red"><g:formatDate format="dd-MM-yyyy" date="${contractedPack.contractEndDate}" /></span>
                     </td>
                 </tr>
             </table>
