@@ -47,4 +47,12 @@ class User {
         }
         return true
     }
+
+    Boolean isNowBirthday() {
+        return DateUtils.isBirthdayNow(birthday)
+    }
+
+    String getCompleteName(){
+        return  name + " " + lastName
+    }
 }

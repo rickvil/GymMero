@@ -35,16 +35,23 @@
         <section id="content">
             <div class="admin-form theme-info" id="login1" style="margin-top: 6%;">
                 <img src="${resource(file:'logo.jpg')}" alt="logo" style="width: 20%; margin:auto;display:block;">
-                <h1 class="coming-soon-title textColor">Bienvenido a Mero Gym</h1>
+                <h1 class="coming-soon-title textColor">Bienvenido a
+                    <span style="color: #ee08fa !important;">Mero </span>
+                    <span style="color: black !important;">Gym </span>
+                    <span style="color: #ee08fa !important;">Fitness</span>
+                </h1>
                 <br/>
                 <h2 class="textColor">Registre su Asistencia con el lector de Credencial</h2>
+                <g:if test="${flash.error}">
+                    <h2 class="textColor" style="color: red !important;" id="showError">${flash.error}</h2>
+                </g:if>
                 <div class="panel panel-info bw10">
                     <div class="panel-menu">
                         <div class="row">
                             <div class="col-md-12">
                                 <g:form controller="registerAssistance" action="validatedRegister">
                                     <fieldset class="form">
-                                        <g:textField name="credential" class="gui-input" placeholder="Código de Credencial"/>
+                                        <g:textField id="credential" name="credential" class="gui-input" placeholder="Código de Credencial"/>
                                     </fieldset>
                                 </g:form>
                             </div>
@@ -64,7 +71,15 @@
 <asset:javascript src="assets/js/main.js"/>
 
 <script type="text/javascript">
+    setTimeout(function(){
+        $("#showError").empty();
+    }, 5000);
+
     jQuery(document).ready(function() {
+        $("#credential").focus();
+        $("#credential").blur(function(){
+            $("#credential").focus();
+        });
         "use strict";
         CanvasBG.init({
             Loc: {

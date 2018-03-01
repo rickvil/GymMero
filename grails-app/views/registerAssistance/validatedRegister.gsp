@@ -33,22 +33,40 @@
             <canvas id="demo-canvas"></canvas>
         </div>
         <section id="content">
+            <g:if test="${flash.error}">
+                <div class="alert alert-error" style="display: block">${flash.error}</div>
+            </g:if>
             <div class="admin-form theme-info" id="login1" style="margin-top: 6%;">
                 <img src="${resource(file:'logo.jpg')}" alt="logo" style="width: 20%; margin:auto;display:block;">
-                <h1 class="coming-soon-title textColor">Bienvenido ${user?.name} ${user?.lastName}</h1>
+                <g:if test="${!user.isNowBirthday()}">
+                    <h1 class="coming-soon-title textColor">Bienvenido
+                        <span style="color: black !important;">${user?.completeName}</span>
+                    </h1>
+                </g:if>
+                <g:if test="${user.isNowBirthday()}">
+                    <h1 class="coming-soon-title textColor" style="color: red !important;" id="showError">Feliz Cumpleños
+                        <span style="color: black !important;">${user?.completeName} !!</span>
+                    </h1>
+                    <h1 class="textColor">
+                        <span style="color: #ee08fa !important;">Mero </span>
+                        <span style="color: black !important;">Gym </span>
+                        <span style="color: #ee08fa !important;">Fitness </span>
+                        te desea un gran día!
+                    </h1>
+                </g:if>
                 <br/>
-                <h2 class="textColor">Registre su Asistencia con el lector de Credencial</h2>
+                <h2 class="textColor">Tienes disponible ${contractedPack.remainingClasses} clases</h2>
+                <h2 class="textColor">Espera la confirmación de asistencia de tu Instructor</h2>
                 <div class="panel panel-info bw10">
                     <div class="panel-menu">
                         <div class="row">
                             <div class="col-md-12">
-                                %{--<g:form controller="registerAssistance" action="registerAssistence">--}%
+                                <g:form controller="registerAssistance" action="confirmRegister">
                                     <fieldset class="form">
-                                        %{--<g:textField name="credential" class="gui-input" placeholder="Código de Credencial"/>--}%
-
-                                mostrando algo - ${user?.name}
+                                        <g:passwordField id="credentialInstructor" name="credentialInstructor" class="gui-input" placeholder="Credencial de Instructor"/>
+                                        <g:hiddenField name="credentialUser" value="${contractedPack.barCode}"/>
                                     </fieldset>
-                                %{--</g:form>--}%
+                                </g:form>
                             </div>
                         </div>
                     </div>
@@ -60,21 +78,25 @@
 
 <asset:javascript src="vendor/jquery/jquery-1.11.1.min.js"/>
 <asset:javascript src="vendor/jquery/jquery_ui/jquery-ui.min.js"/>
-%{--<asset:javascript src="vendor/plugins/canvasbg/canvasbg.js"/>--}%
+<asset:javascript src="vendor/plugins/canvasbg/canvasbg.js"/>
 
 <asset:javascript src="assets/js/utility/utility.js"/>
 <asset:javascript src="assets/js/main.js"/>
 
-%{--<script type="text/javascript">--}%
-    %{--jQuery(document).ready(function() {--}%
-        %{--"use strict";--}%
-        %{--CanvasBG.init({--}%
-            %{--Loc: {--}%
-                %{--x: window.innerWidth / 10,--}%
-                %{--y: window.innerHeight / 20--}%
-            %{--}--}%
-        %{--});--}%
-    %{--});--}%
-%{--</script>--}%
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        $("#credentialInstructor").focus();
+        $("#credentialInstructor").blur(function(){
+            $("#credentialInstructor").focus();
+        });
+        "use strict";
+        CanvasBG.init({
+            Loc: {
+                x: window.innerWidth / 10,
+                y: window.innerHeight / 20
+            }
+        });
+    });
+</script>
 </body>
 </html>

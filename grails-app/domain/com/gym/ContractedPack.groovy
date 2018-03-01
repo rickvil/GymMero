@@ -11,6 +11,7 @@ class ContractedPack {
     double debt
     boolean free
     String comment
+    Integer assistedClasses
 
     static constraints = {
         user(nullable: false)
@@ -19,10 +20,22 @@ class ContractedPack {
         free(nullable: false)
         comment(nullable: true, size: 0..1000)
         debt(nullable: true)
+        assistedClasses(nullable: true, size: 1..2, min: 0, max: 60)
     }
 
     static hasMany = [
             activity : Activity,
             typeActivity : TypeActivity
     ]
+
+    Boolean isExpiredCredential() {
+        if (DateUtils.nowDateTrimeTime() > contractEndDate) {
+            return true
+        }
+        return false
+    }
+
+    Integer getRemainingClasses(){
+        return credit - assistedClasses
+    }
 }
