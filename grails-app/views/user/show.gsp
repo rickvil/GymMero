@@ -137,6 +137,10 @@
 
 											<g:sortableColumn property="credit" title="${message(code: 'contractedPack.credit.label', default: 'Cant. Clases')}" />
 
+											<g:sortableColumn property="assistedClasses" title="${message(code: 'contractedPack.assistedClasses.label', default: 'Clases Asistidas')}" />
+
+											<g:sortableColumn property="remainingClasses" title="${message(code: 'contractedPack.remainingClasses.label', default: 'Clases Restan')}" />
+
 											<g:sortableColumn property="free" title="${message(code: 'contractedPack.free.label', default: 'Libre')}" />
 
 											<g:sortableColumn property="price" title="${message(code: 'contractedPack.price.label', default: 'Pago')}" />
@@ -163,6 +167,10 @@
 												%{--<td>${fieldValue(bean: contractedPackInstance, field: "barCode")}</td>--}%
 
 												<td>${fieldValue(bean: contractedPackInstance, field: "credit")}</td>
+
+												<td>${fieldValue(bean: contractedPackInstance, field: "assistedClasses")}</td>
+
+												<td>${contractedPackInstance.remainingClasses}</td>
 
 												<td><g:formatBoolean boolean="${contractedPackInstance.free}" /></td>
 

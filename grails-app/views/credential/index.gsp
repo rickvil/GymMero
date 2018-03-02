@@ -175,25 +175,30 @@
                     <center>
                         <h3>Terminos y condiciones para los Socios menores de Edad</h3>
                     </center>
-                    <span class="lettermin" style="color:black">
-                        * GymMero no se responsabiliza por la perdida de los objetos en el local
+                    %{--<br/>--}%
+                    %{--<div align="right">--}%
+                    <span style="color:black" >
+                        FECHA:
+                        <g:formatDate format="dd-MM-yyyy" date="${new Date()}" />
                     </span>
+                    %{--</div>--}%
                     <br/>
-                    <span class="lettermin" style="color:black">
-                        * Las clases no tomadas por el socio, no se recuperan
-                    </span>
                     <br/>
-                    <span class="lettermin" style="color:black">
-                        * El socio y su tutor desligan de toda responsabilidad sobre inconvenientes que sucedan en las intalaciones
+                    <span style="color:black">
+                        DE SER MENOR DE EDAD, AUTORIZO A MI HIJO/A
                     </span>
+                    <span style="color:black; font-weight: bold">
+                        ${contractedPack.user.completeName}
+                    </span>
+                    DNI
+                    <span style="color:black; font-weight: bold">
+                        ${contractedPack.user.dni}
+                    </span>
+                    <span style="color:black">
+                    A REALIZAR LAS ACTIVIDADES DE ENTRENAMIENTO QUE BRINDA EL GIMNASIO MERO GYM FITNESS DE JUJUY.
+                    </span>
+
                     <br/>
-                    <span class="lettermin" style="color:black">
-                        * Yo tutor, entiendo y comprendo todo los terminos enunciados
-                    </span>
-                    <br/>
-                    <span class="lettermin" style="color:black">
-                        * Como tutor/ responsable del menor, doy concentimiento para asistir a todas las clases contratadas
-                    </span>
                     <br/>
                     <br/>
                     <br/>
@@ -203,29 +208,12 @@
                                 <td>
                                     <center>
                                     <span class="lettermin" style="color:black">
-                                        ____________________________
+                                        ________________________________________________________
                                     </span>
 
                                     <br/>
-                                    <span class="lettermin" style="color:black">
-                                        FIRMA DEL SOCIO
-                                    </span>
-                                    </center>
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td>
-                                    <center>
-                                    <span class="lettermin" style="color:black">
-                                        ____________________________
-                                    </span>
-
-                                    <br/>
-                                    <span class="lettermin" style="color:black">
-                                        FIRMA DEL TUTOR
+                                    <span style="color:black">
+                                        DNI, FIRMA y ACLARACION DEL PADRE O TUTOR
                                     </span>
                                     </center>
                                 </td>

@@ -38,7 +38,7 @@ class UserController {
     }
 
     def show(User userInstance) {
-        def contractedPackInstanceList = ContractedPack.findAllByUser(userInstance)
+        def contractedPackInstanceList = ContractedPack.findAllByUser(userInstance,  [sort: "contractStartDate", order: "desc"])
         respond userInstance, model:[contractedPackInstanceList: contractedPackInstanceList]
     }
 

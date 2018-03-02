@@ -11,7 +11,7 @@ class ContractedPack {
     double debt
     boolean free
     String comment
-    Integer assistedClasses
+    Integer assistedClasses = 0
 
     static constraints = {
         user(nullable: false)
