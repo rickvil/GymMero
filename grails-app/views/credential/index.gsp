@@ -112,7 +112,7 @@
                 </tr>
             </table>
             <center>
-                <div><g:img dir="barCode" file="showBarcode?barcode=${contractedPack.barCode}" style="width: 200px; height: 30px;"/></div>
+                <div><g:img dir="barCode" file="showBarcode?barcode=${contractedPack.barCode}"/></div>
                 <span style="font-size: xx-small; color:#ff334b">${barCodeComplete}</span>
             </center>
 
