@@ -108,8 +108,7 @@
                         <g:if test="${contractedPack.typeActivity.size() != 0}">
                             <span class="description" style="color: blue">${contractedPack.typeActivity.title}</span><br/><br/>
                         </g:if>
-
-                        <span style="color: red">CLASES: ${contractedPack.credit}</span>
+                        <span style="color: red">CLASES: ${contractedPack.credit}</span><br/>
                         <span style="color: red">VALIDO HASTA: </span>
                         <span class="description" style="color: red"><g:formatDate format="dd-MM-yyyy" date="${contractedPack.contractEndDate}" /></span>
                     </td>
