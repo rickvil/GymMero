@@ -170,7 +170,7 @@
 
 												<td>${fieldValue(bean: contractedPackInstance, field: "assistedClasses")}</td>
 
-												<td>${contractedPackInstance.remainingClasses}</td>
+												<td style="${contractedPackInstance.remainingClasses != 0 ? '': 'color: red;'}">${contractedPackInstance.remainingClasses}</td>
 
 												<td><g:formatBoolean boolean="${contractedPackInstance.free}" /></td>
 

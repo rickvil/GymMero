@@ -73,7 +73,7 @@
 <script type="text/javascript">
     setTimeout(function(){
         $("#showError").empty();
-    }, 5000);
+    }, 10000);
 
     jQuery(document).ready(function() {
         $("#credential").focus();

@@ -67,7 +67,7 @@
 			<div class="fieldcontain ${hasErrors(bean: contractedPackInstance, field: 'credit', 'error')} ">
 				<g:message code="contractedPack.credit.label" default="Cantidad de Clases" />
 				<label for="credit" class="field prepend-icon">
-					<g:field name="credit" type="number" value="${contractedPackInstance.credit}" min="0" max="60" class="gui-input" />
+					<g:field name="credit" type="number" value="${contractedPackInstance.credit}" min="0" max="60" class="gui-input" required=""/>
 					<label for="credit" class="field-icon">
 						<i class="fa fa-calendar"></i>
 					</label>

@@ -40,7 +40,7 @@
                 <img src="${resource(file:'logo.jpg')}" alt="logo" style="width: 20%; margin:auto;display:block;">
                 <g:if test="${!user.isNowBirthday()}">
                     <h1 class="coming-soon-title textColor">Bienvenido
-                        <span style="color: black !important;">${user?.completeName}</span>
+                        <a href="${createLink(uri: '/contractedPack/show/'+contractedPack?.id)}" target="_blank"><span style="color: black !important;">${user?.completeName}</span></a>
                     </h1>
                 </g:if>
                 <g:if test="${user.isNowBirthday()}">
@@ -56,7 +56,17 @@
                 </g:if>
                 <br/>
                 <h2 class="textColor">Tienes disponible ${contractedPack.remainingClasses} clases</h2>
+
+                <g:if test="${contractedPack.debt != 0}">
+                    <h2 class="textColor" style="color: red !important;">Tienes una deuda de ${contractedPack.debt} $</h2>
+                </g:if>
+
                 <h2 class="textColor">Espera la confirmación de asistencia de tu Instructor</h2>
+                <h2 class="textColor">para tu clase de ${contractedPack.activity.title}
+                    <g:if test="${contractedPack.typeActivity.size() != 0}">
+                        - ${contractedPack.typeActivity.title}
+                    </g:if>
+                </h2>
                 <div class="panel panel-info bw10">
                     <div class="panel-menu">
                         <div class="row">
