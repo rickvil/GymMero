@@ -1,6 +1,7 @@
 package com.gym
 
 import org.krysalis.barcode4j.HumanReadablePlacement
+import org.krysalis.barcode4j.impl.code128.Code128Bean
 import org.krysalis.barcode4j.impl.code39.Code39Bean
 import org.krysalis.barcode4j.output.bitmap.BitmapCanvasProvider
 import org.krysalis.barcode4j.tools.UnitConv
@@ -37,7 +38,12 @@ class BarCodeController {
 //    }
 
     def showBarcode(String barcode) {
-        def generator = new Code39Bean()
+        def generator = new Code128Bean()
+        final int dpi = 150;
+
+        generator.setModuleWidth(UnitConv.in2mm(1.0f / dpi));
+        generator.doQuietZone(false);
+
         generator.setMsgPosition(HumanReadablePlacement.HRP_NONE)
         generator.setBarHeight(2)
         renderBarcodePng(generator, barcode)
