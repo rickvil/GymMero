@@ -63,7 +63,7 @@
 			</div>
 		</div>
 
-		<div class="col-md-3">
+		<div class="col-md-6">
 			<div class="fieldcontain ${hasErrors(bean: contractedPackInstance, field: 'credit', 'error')} ">
 				<g:message code="contractedPack.credit.label" default="Cantidad de Clases" />
 				<label for="credit" class="field prepend-icon">
@@ -75,17 +75,17 @@
 			</div>
 		</div>
 
-        <div class="col-md-3">
-            <div class="fieldcontain ${hasErrors(bean: contractedPackInstance, field: 'free', 'error')} ">
-                <div class="option-group field">
-                    <g:message code="contractedPack.credit.label" default=" ." />
-                    <label class="option block">
-                        <g:checkBox name="free" value="${contractedPackInstance?.free}" />
-                        <span class="checkbox"></span> free x 1 mes
-                    </label>
-                </div>
-            </div>
-        </div>
+        %{--<div class="col-md-3">--}%
+            %{--<div class="fieldcontain ${hasErrors(bean: contractedPackInstance, field: 'free', 'error')} ">--}%
+                %{--<div class="option-group field">--}%
+                    %{--<g:message code="contractedPack.credit.label" default=" ." />--}%
+                    %{--<label class="option block">--}%
+                        %{--<g:checkBox name="free" value="${contractedPackInstance?.free}" />--}%
+                        %{--<span class="checkbox"></span> free x 1 mes--}%
+                    %{--</label>--}%
+                %{--</div>--}%
+            %{--</div>--}%
+        %{--</div>--}%
 	</div>
 
 	<div class="section row">

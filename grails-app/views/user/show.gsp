@@ -141,7 +141,7 @@
 
 											<g:sortableColumn property="remainingClasses" title="${message(code: 'contractedPack.remainingClasses.label', default: 'Clases Restan')}" />
 
-											<g:sortableColumn property="free" title="${message(code: 'contractedPack.free.label', default: 'Libre')}" />
+											%{--<g:sortableColumn property="free" title="${message(code: 'contractedPack.free.label', default: 'Libre')}" />--}%
 
 											<g:sortableColumn property="price" title="${message(code: 'contractedPack.price.label', default: 'Pago')}" />
 
@@ -172,7 +172,7 @@
 
 												<td style="${contractedPackInstance.remainingClasses != 0 ? '': 'color: red;'}">${contractedPackInstance.remainingClasses}</td>
 
-												<td><g:formatBoolean boolean="${contractedPackInstance.free}" /></td>
+												%{--<td><g:formatBoolean boolean="${contractedPackInstance.free}" /></td>--}%
 
 												<td>$${fieldValue(bean: contractedPackInstance, field: "price")}</td>
 
