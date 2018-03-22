@@ -1,14 +1,10 @@
 package com.gym
 
-import org.jxls.util.JxlsHelper
-import org.jxls.common.Context;
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
 class UserController {
-
-    def assetResourceLocator
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -41,17 +37,7 @@ class UserController {
 
     def show(User userInstance) {
         def contractedPackInstanceList = ContractedPack.findAllByUser(userInstance,  [sort: "contractStartDate", order: "desc"])
-        exportExcel()
         respond userInstance, model:[contractedPackInstanceList: contractedPackInstanceList]
-    }
-
-    def exportExcel(){
-        List<Assistance> employees = Assistance.getAll()
-        InputStream is = assetResourceLocator.findAssetForURI("object_collection_template.xls").inputStream
-        OutputStream os = new FileOutputStream("target/object_collection_output.xls")
-        Context context = new Context()
-        context.putVar("employees", employees)
-        JxlsHelper.getInstance().processTemplate(is, os, context)
     }
 
     def create() {

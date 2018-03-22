@@ -130,6 +130,7 @@
 									<g:link class="button btn-primary btn-danger" action="edit" resource="${contractedPackInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
 									<g:actionSubmit class="button btn-danger" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 									<g:link class="button btn-primary btn-danger" controller="credential" action="index" id="${contractedPackInstance?.id}" target="_blank">Credencial</g:link>
+									<g:link class="button btn-primary btn-danger" controller="report" action="assistenceByContractedPack" id="${contractedPackInstance?.id}">Lista de Asistencia</g:link>
 								</fieldset>
 							</g:form>
 						</div>

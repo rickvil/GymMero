@@ -908,11 +908,18 @@
 					<a href="${createLink(uri: '/registerAssistance')}" target="_blank">
 						<span class="fa fa-user"></span>
 						<span class="sidebar-title">Registrar Asistencia</span>
-						<span class="sidebar-title-tray">
-							<span class="label label-xs bg-primary">New</span>
-						</span>
 					</a>
 				</li>
+				%{--<li>--}%
+					%{--<g:link controller="user" action="exportExcel">exportando</g:link>--}%
+					%{--<a href="${createLink(uri: '/report')}">--}%
+						%{--<span class="fa fa-user"></span>--}%
+						%{--<span class="sidebar-title">Reporte de asistencia</span>--}%
+						%{--<span class="sidebar-title-tray">--}%
+							%{--<span class="label label-xs bg-primary">New</span>--}%
+						%{--</span>--}%
+					%{--</a>--}%
+				%{--</li>--}%
 				%{--<li>--}%
 					%{--<a href="../README/index.html">--}%
 						%{--<span class="glyphicon glyphicon-book"></span>--}%
