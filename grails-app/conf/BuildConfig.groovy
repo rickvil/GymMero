@@ -53,6 +53,7 @@ grails.project.dependency.resolution = {
 		// test "org.grails:grails-datastore-test-support:1.0.2-grails-2.4"
         runtime 'mysql:mysql-connector-java:5.1.29'
         compile 'org.springframework:spring-test:4.0.6.RELEASE'
+        compile 'org.jxls:jxls:2.4.4'
     }
 
     plugins {
@@ -71,6 +72,9 @@ grails.project.dependency.resolution = {
         compile ":barcode4j:0.3"
 //        compile ":rendering:1.0.0"
         compile "org.grails.plugins:rendering:1.0.0"
+//        compile "org.grails.plugins:jxl:0.54"
+//        compile 'org.jxls:jxls-site:2.4.3'
+//        compile 'org.jxls:jxls-site:2.4.3'
 
 
         // Uncomment these to enable additional asset-pipeline capabilities
