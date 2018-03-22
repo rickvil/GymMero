@@ -91,6 +91,12 @@ class ContractedPackController {
         }
 
         User user = contractedPackInstance.user
+
+        def assistanceInstanceList = Assistance.findAllByContractedPack(contractedPackInstance)
+        assistanceInstanceList.each {
+            it.delete flush:true
+        }
+
         contractedPackInstance.delete flush:true
 
         request.withFormat {
