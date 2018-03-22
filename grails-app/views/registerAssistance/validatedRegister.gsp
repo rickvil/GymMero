@@ -55,13 +55,13 @@
                     </h1>
                 </g:if>
                 <br/>
-                <h2 class="textColor">Tienes disponible ${contractedPack.remainingClasses} clases</h2>
+                <h1 class="textColor">Tienes disponible ${contractedPack.remainingClasses} clases</h1>
 
                 <g:if test="${contractedPack.debt != 0}">
-                    <h2 class="textColor" style="color: red !important;">Tienes una deuda de ${contractedPack.debt} $</h2>
+                    <h1 class="textColor" style="color: red !important;">Tienes una deuda de ${contractedPack.debt} $</h1>
                 </g:if>
 
-                <h2 class="textColor">Espera la confirmación de asistencia de tu Instructor</h2>
+                <h2 class="textColor" style="color: black !important;">Espera la confirmación de asistencia de tu Instructor</h2>
                 <h2 class="textColor">para tu clase de ${contractedPack.activity.title}
                     <g:if test="${contractedPack.typeActivity.size() != 0}">
                         - ${contractedPack.typeActivity.title}
