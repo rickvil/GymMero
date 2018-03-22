@@ -54,6 +54,8 @@ grails.project.dependency.resolution = {
         runtime 'mysql:mysql-connector-java:5.1.29'
         compile 'org.springframework:spring-test:4.0.6.RELEASE'
         compile 'org.jxls:jxls:2.4.4'
+        compile 'org.jxls:jxls-poi:1.0.14'
+        compile 'org.jxls:jxls-jexcel:1.0.6'
     }
 
     plugins {
