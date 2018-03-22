@@ -16,7 +16,8 @@ class ContractedPackController {
     }
 
     def show(ContractedPack contractedPackInstance) {
-        respond contractedPackInstance
+        def assistanceInstanceList = Assistance.findAllByContractedPack(contractedPackInstance,  [sort: "dateAssistance", order: "desc"])
+        respond contractedPackInstance, model: [assistanceInstanceList: assistanceInstanceList]
     }
 
     def create(User userInstance) {
