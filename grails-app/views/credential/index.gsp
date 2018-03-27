@@ -71,15 +71,15 @@
     </style>
 
     <style type="text/css" media="screen">
-        @import url(http://fonts.googleapis.com/css?family=Oxygen:400,700);
+    @import url(http://fonts.googleapis.com/css?family=Oxygen:400,700);
     </style>
 
     <style type="text/css" media="screen">
-        @media screen {
-            * {
-                font-family: 'Oxygen', 'Helvetica Neue', 'Arial', 'sans-serif' !important;
-            }
+    @media screen {
+        * {
+            font-family: 'Oxygen', 'Helvetica Neue', 'Arial', 'sans-serif' !important;
         }
+    }
     </style>
 
 </head>
@@ -97,7 +97,7 @@
             <table>
                 <tr>
                     <td>
-                        <img src="${resource(file:'logo.jpg')}" alt="logo" style="width: 100px; margin:2px auto;display:block;">
+                        <img src="${resource(file:'profile.jpg')}" alt="logo" style="width: 100px; margin:2px auto;display:block;">
                     </td>
                     <td>
                         <span class="header-sm">MERITO: </span>
@@ -121,23 +121,34 @@
 
         </td>
         <td class="credential">
-            <span>
-                <img src="${resource(file:'facebook.png')}" style="width: 20px"/>
-                <span class="description"> /BAILAMERO</span>
-            </span><br/>
-            <span>
-                <img src="${resource(file:'whatsapp.png')}" style="width: 20px"/>
-                <span class="description"> +5493884297472</span>
-            </span><br/>
-            <span>
-                <img src="${resource(file:'gmaps.png')}" style="width: 20px"/>
-                <span class="description"> Juana Manuela Gorriti 127 - San Salvador de Jujuy</span>
-            </span><br/>
-            <span>
-                <img src="${resource(file:'email.png')}" style="width: 20px"/>
-                <span class="description"> merogymfitnessjujuy@hotmail.com</span>
-            </span><br/>
-            <br/>
+
+            <table style="border-spacing: 1px !important;">
+                <tr>
+                    <td>
+                        <span>
+                            <img src="${resource(file:'facebook.png')}" style="width: 20px"/>
+                            <span class="description"> /BAILAMERO</span>
+                        </span><br/>
+                        <span>
+                            <img src="${resource(file:'whatsapp.png')}" style="width: 20px"/>
+                            <span class="description"> +5493884297472</span>
+                        </span><br/>
+                        <span>
+                            <img src="${resource(file:'gmaps.png')}" style="width: 20px"/>
+                            <span class="description"> Juana M. Gorriti 127 - S.S. de Jujuy</span>
+                        </span><br/>
+                        <span>
+                            <img src="${resource(file:'email.png')}" style="width: 20px"/>
+                            <span class="description"> merogymfitnessjujuy@hotmail.com</span>
+                        </span>
+
+                    </td>
+                    <td>
+                        <img src="${resource(file:'logo.jpg')}" alt="logo" style="width: 100px; margin:2px auto;display:block;margin-left: 35px;">
+                    </td>
+                </tr>
+            </table>
+
             <center>
                 <span class="lettermin" style="color:black">
                     LAS CUOTAS SON PERSONALES Y NO REINTEGRABLES.
@@ -198,7 +209,7 @@
                         ${contractedPack.user.dni}
                     </span>
                     <span style="color:black">
-                    A REALIZAR LAS ACTIVIDADES DE ENTRENAMIENTO QUE BRINDA EL GIMNASIO MERO GYM FITNESS DE JUJUY.
+                        A REALIZAR LAS ACTIVIDADES DE ENTRENAMIENTO QUE BRINDA EL GIMNASIO MERO GYM FITNESS DE JUJUY.
                     </span>
 
                     <br/>
@@ -210,14 +221,14 @@
                             <tr>
                                 <td>
                                     <center>
-                                    <span class="lettermin" style="color:black">
-                                        ________________________________________________________
-                                    </span>
+                                        <span class="lettermin" style="color:black">
+                                            ________________________________________________________
+                                        </span>
 
-                                    <br/>
-                                    <span style="color:black">
-                                        DNI, FIRMA y ACLARACION DEL PADRE O TUTOR
-                                    </span>
+                                        <br/>
+                                        <span style="color:black">
+                                            DNI, FIRMA y ACLARACION DEL PADRE O TUTOR
+                                        </span>
                                     </center>
                                 </td>
                             </tr>
