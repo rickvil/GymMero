@@ -913,7 +913,7 @@
 				<li>
 					<a href="${createLink(uri: '/report')}">
 						<span class="fa fa-user"></span>
-						<span class="sidebar-title">Reporte de asistencia</span>
+						<span class="sidebar-title">Informes</span>
 						<span class="sidebar-title-tray">
 							<span class="label label-xs bg-primary">New</span>
 						</span>
