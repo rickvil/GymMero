@@ -15,7 +15,7 @@ class ReportController {
     }
 
     def assistenceByContractedPack(Long id){
-        response.setHeader("Content-Disposition", "Attachment;Filename=\"assistance_user.xls\"")
+        response.setHeader("Content-Disposition", "Attachment;Filename=\"asistencia_socio.xls\"")
         ContractedPack contractedPack = ContractedPack.get(id)
         List<Assistance> assistances = Assistance.findAllByContractedPack(contractedPack, [sort: "dateAssistance", order: "desc"])
         InputStream is = assetResourceLocator.findAssetForURI("assistance_user_template.xls").inputStream
@@ -33,7 +33,7 @@ class ReportController {
     def assistence(BetweenDateDto betweenDateDto){
         println("assistence betweenDateDto.fromDate: " + betweenDateDto.fromDate)
         println("assistence betweenDateDto.untilDate: " + betweenDateDto.untilDate)
-        response.setHeader("Content-Disposition", "Attachment;Filename=\"assistances_list_user.xls\"")
+        response.setHeader("Content-Disposition", "Attachment;Filename=\"asistencias_lista_socios.xls\"")
 
         List<Assistance> assistances = Assistance.findAllByDateAssistanceBetween(betweenDateDto.fromDate, betweenDateDto.untilDate, [sort: "dateAssistance", order: "desc"])
         InputStream is = assetResourceLocator.findAssetForURI("assistances_list_user_template.xls").inputStream

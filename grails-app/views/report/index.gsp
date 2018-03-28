@@ -54,7 +54,7 @@
 						</fieldset>
 						<div class="panel-footer text-right">
 							<g:actionSubmit class="button btn-primary btn-danger" action="contracted" value="${message(code: 'default.button.pack.contracted.report', default: 'Pack Contratados')}" />
-							<g:actionSubmit class="button btn-primary btn-danger" action="assistence" value="${message(code: 'default.button.assistance.report', default: 'Asistencia')}" />
+							<g:actionSubmit class="button btn-primary btn-danger" action="assistence" value="${message(code: 'default.button.assistance.report', default: 'Asistencias')}" />
 						</div>
 					</g:form>
 				</div>
