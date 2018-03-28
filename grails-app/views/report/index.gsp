@@ -22,9 +22,7 @@
 			</div>
 
 		</header>
-		<g:form>
-			fromDate: - ${betweenDateDto?.fromDate}
-			untilDate: - ${betweenDateDto?.untilDate}
+		<g:form url="[resource:betweenDateDto, action:'update']" method="PUT">
 			<div class="section row">
 				<div class="col-md-6">
 					<div class="fieldcontain ${hasErrors(bean: betweenDateDto, field: 'contractStartDate', 'error')} required">
@@ -37,7 +35,7 @@
 				</div>
 
 				<div class="col-md-6">
-					<div class="fieldcontain ${hasErrors(bean: dateBetween, field: 'contractEndDate', 'error')} required">
+					<div class="fieldcontain ${hasErrors(bean: betweenDateDto, field: 'contractEndDate', 'error')} required">
 						<label for="untilDate">
 							<g:message code="contractedPack.contractEndDate.label" default="Fecha vencimiento" />
 							<span class="required-indicator">*</span>
@@ -47,8 +45,8 @@
 				</div>
 			</div>
 			<fieldset class="buttons">
-				<g:link class="button btn-primary btn-danger" action="assistence" params="${betweenDateDto}">Asistencia</g:link>
-				<g:link class="button btn-primary btn-danger" action="contracted" params="${betweenDateDto}">Packs Contratados</g:link>
+				<g:actionSubmit class="button btn-primary btn-danger" action="contracted" value="${message(code: 'default.button.pack.contracted.report', default: 'Pack Contratados')}" />
+				<g:actionSubmit class="button btn-primary btn-danger" action="assistence" value="${message(code: 'default.button.assistance.report', default: 'Asistencia')}" />
 			</fieldset>
 		</g:form>
 	</body>

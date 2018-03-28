@@ -38,4 +38,12 @@ class ContractedPack {
     Integer getRemainingClasses(){
         return credit - assistedClasses
     }
+
+    String getListActivity(){
+        return activity.title
+    }
+
+    String getListTypeActivity(){
+        return typeActivity.title
+    }
 }
