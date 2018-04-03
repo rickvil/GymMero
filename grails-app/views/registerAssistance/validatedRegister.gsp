@@ -62,7 +62,7 @@
                 </g:if>
 
                 <h2 class="textColor" style="color: black !important;">Espera la confirmación de asistencia de tu Instructor</h2>
-                <h2 class="textColor">para tu clase de ${contractedPack.activity.title}
+                <h2 class="textColor" style="color: black !important;">para tu clase de ${contractedPack.activity.title}
                     <g:if test="${contractedPack.typeActivity.size() != 0}">
                         - ${contractedPack.typeActivity.title}
                     </g:if>
@@ -73,7 +73,7 @@
                             <div class="col-md-12">
                                 <g:form controller="registerAssistance" action="confirmRegister">
                                     <fieldset class="form">
-                                        <g:passwordField id="credentialInstructor" name="credentialInstructor" class="gui-input" placeholder="Credencial de Instructor"/>
+                                        <g:passwordField id="credentialInstructor" name="credentialInstructor" class="gui-input" placeholder="Credencial de Instructor" required=""/>
                                         <g:hiddenField name="credentialUser" value="${contractedPack.barCode}"/>
                                     </fieldset>
                                 </g:form>
