@@ -66,8 +66,13 @@
 											<i class="glyphicon glyphicon-calendar"></i>
 										</span>
 										<span class="panel-title">
+											Contrato
 											<g:fieldValue bean="${contractedPackInstance}" field="credit"/>
-											clases
+											clases,
+											Asistio a:
+											<g:fieldValue bean="${contractedPackInstance}" field="assistedClasses"/>
+											, le quedan disponible:
+											<g:fieldValue bean="${contractedPackInstance}" field="remainingClasses"/>
 										</span>
 									</div>
 									<div>
@@ -114,6 +119,17 @@
 								</div>
 								<div>
 									<span class="panel-icon">
+										<i class="glyphicon glyphicon-barcode"></i>
+									</span>
+									<span class="panel-title">
+										Código de Barra:
+										<g:if test="${contractedPackInstance?.contractStartDate}">
+											<g:fieldValue bean="${contractedPackInstance}" field="barCode"/>
+										</g:if>
+									</span>
+								</div>
+								<div>
+									<span class="panel-icon">
 										<i class="glyphicon glyphicon-comment"></i>
 									</span>
 									<span class="panel-title">
@@ -155,9 +171,6 @@
 									</div>
 								</div>
 								<div class="panel-body pn">
-									<g:if test="${flash.message}">
-										<div class="message" role="status">${flash.message}</div>
-									</g:if>
 									<table class="table table-striped table-hover display" id="datatable5" cellspacing="0" width="100%">
 										<thead>
 											<tr>
@@ -177,6 +190,7 @@
 								</div>
 							</div>
 						</div>
+
 						<div class="col-md-6">
 							<div class="panel panel-visible" id="spy5">
 								<div class="panel-heading">
@@ -185,21 +199,20 @@
 									</div>
 								</div>
 								<div class="panel-body pn">
-									<g:if test="${flash.message}">
-										<div class="message" role="status">${flash.message}</div>
-									</g:if>
 									<table class="table table-striped table-hover display" id="datatable5" cellspacing="0" width="100%">
 										<thead>
 										<tr>
-											<th><g:message code="contractedPack.contractStartDate.label" default="Fecha de asistencia" /></th>
-											<th><g:message code="contractedPack.activity.label" default="Persona que autorizo" /></th>
+											<th><g:message code="contractedPack.contractStartDate.label" default="Fecha de pago" /></th>
+											<th><g:message code="contractedPack.activity.label" default="Monto" /></th>
+											<th><g:message code="contractedPack.activity.label" default="Comentario" /></th>
 										</tr>
 										</thead>
 										<tbody>
-										<g:each in="${assistanceInstanceList}" status="i" var="assistanceInstance">
+										<g:each in="${paymentInstanceList}" status="i" var="paymentInstance">
 											<tr class="${(i % 2) == 0 ? 'even' : 'odd'}" >
-												<td><g:formatDate format="dd-MM-yyyy hh:mm:ss" date="${assistanceInstance?.dateAssistance}" /></td>
-												<td>${fieldValue(bean: assistanceInstance, field: "authorizedBy")}</td>
+												<td><g:formatDate format="dd-MM-yyyy hh:mm:ss" date="${paymentInstance?.dayPayment}" /></td>
+												<td>$ ${fieldValue(bean: paymentInstance, field: "amount")}</td>
+												<td>${fieldValue(bean: paymentInstance, field: "comment")}</td>
 											</tr>
 										</g:each>
 										</tbody>

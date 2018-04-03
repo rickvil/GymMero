@@ -17,7 +17,8 @@ class ContractedPackController {
 
     def show(ContractedPack contractedPackInstance) {
         def assistanceInstanceList = Assistance.findAllByContractedPack(contractedPackInstance,  [sort: "dateAssistance", order: "desc"])
-        respond contractedPackInstance, model: [assistanceInstanceList: assistanceInstanceList]
+        def paymentInstanceList = Payment.findAllByContractedPack(contractedPackInstance,  [sort: "dayPayment", order: "desc"])
+        respond contractedPackInstance, model: [assistanceInstanceList: assistanceInstanceList, paymentInstanceList: paymentInstanceList]
     }
 
     def create(User userInstance) {
@@ -65,7 +66,7 @@ class ContractedPackController {
         payment.user = contractedPack.user
         payment.contractedPack = contractedPack
         payment.comment = "Contrato pack por \$" +
-            contractedPack.priceTotal.toString() + ": pago \$" + contractedPack.price.toString() +
+            contractedPack.priceTotal.toString() +
             ", debe \$" + contractedPack.debt.toString()
         payment.save flush:true
     }
@@ -76,8 +77,7 @@ class ContractedPackController {
         payment.dayPayment = new Date()
         payment.user = contractedPack.user
         payment.contractedPack = contractedPack
-        payment.comment = "Abona deuda" +
-                " - paga: \$" + contractedPack.payment.toString()
+        payment.comment = "Abona deuda"
         payment.save flush:true
 
         contractedPack.price = contractedPack.price + contractedPack.payment
