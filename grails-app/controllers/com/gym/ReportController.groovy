@@ -30,6 +30,22 @@ class ReportController {
         response.outputStream.close()
     }
 
+    def paymentByContractedPack(Long id){
+        response.setHeader("Content-Disposition", "Attachment;Filename=\"pagos_socio.xls\"")
+        ContractedPack contractedPack = ContractedPack.get(id)
+        List<Payment> payments = Payment.findAllByContractedPack(contractedPack, [sort: "dayPayment", order: "desc"])
+        InputStream is = assetResourceLocator.findAssetForURI("payment_user_template.xls").inputStream
+        def os = response.outputStream
+        Context context = new Context()
+        context.putVar("payments", payments)
+        context.putVar("contractedPack", contractedPack)
+        JxlsHelper.getInstance().processTemplate(is, os, context)
+
+        response.setContentType("application/vnd.ms-excel")
+        response.outputStream.flush()
+        response.outputStream.close()
+    }
+
     def assistence(BetweenDateDto betweenDateDto){
         println("assistence betweenDateDto.fromDate: " + betweenDateDto.fromDate)
         println("assistence betweenDateDto.untilDate: " + betweenDateDto.untilDate)
