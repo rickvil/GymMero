@@ -89,11 +89,19 @@
 	</div>
 
 	<div class="section row">
-		<div class="col-md-6">
+		<div class="col-md-4">
 			<div class="fieldcontain ${hasErrors(bean: contractedPackInstance, field: 'price', 'error')} required">
-				<g:message code="contractedPack.price.label" default="Importe que paga" />
-				<label for="price" class="field prepend-icon">
+
+				<g:if test="${contractedPackInstance?.id == null}">
+					<g:message code="contractedPack.price.label" default="Importe que paga" />
+					<label for="price" class="field prepend-icon">
 					<g:field name="price" value="${fieldValue(bean: contractedPackInstance, field: 'price')}" required="" class="gui-input" />
+				</g:if>
+				<g:if test="${contractedPackInstance?.id != null}">
+					<g:message code="contractedPack.price.label" default="Importe que pago" />
+					<label for="price" class="field prepend-icon">
+					<g:field name="price" value="${fieldValue(bean: contractedPackInstance, field: 'price')}" required="" class="gui-input" readonly="readonly"/>
+				</g:if>
 					<label for="price" class="field-icon">
 						<i class="fa fa-money"></i>
 					</label>
@@ -101,17 +109,35 @@
 			</div>
 		</div>
 
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div class="fieldcontain ${hasErrors(bean: contractedPackInstance, field: 'debt', 'error')} required">
                 <g:message code="contractedPack.debt.label" default="Importe que Adeuda" />
                 <label for="debt" class="field prepend-icon">
-                    <g:field name="debt" value="${fieldValue(bean: contractedPackInstance, field: 'debt')}" required="" class="gui-input" />
-                    <label for="debt" class="field-icon">
+					<g:if test="${contractedPackInstance?.id == null}">
+                    	<g:field name="debt" value="${fieldValue(bean: contractedPackInstance, field: 'debt')}" required="" class="gui-input" />
+					</g:if>
+					<g:if test="${contractedPackInstance?.id != null}">
+						<g:field name="debt" value="${fieldValue(bean: contractedPackInstance, field: 'debt')}" required="" class="gui-input" readonly="readonly"/>
+					</g:if>
+						<label for="debt" class="field-icon">
                         <i class="fa fa-money"></i>
                     </label>
                 </label>
             </div>
         </div>
+		<g:if test="${contractedPackInstance?.id != null && contractedPackInstance?.debt != 0}">
+			<div class="col-md-4">
+				<div class="fieldcontain ${hasErrors(bean: contractedPackInstance, field: 'payment', 'error')} required">
+					<g:message code="contractedPack.payment.label" default="Paga" />
+					<label for="debt" class="field prepend-icon">
+						<g:field name="payment" value="${fieldValue(bean: contractedPackInstance, field: 'payment')}" required="" class="gui-input" />
+						<label for="payment" class="field-icon">
+							<i class="fa fa-money"></i>
+						</label>
+					</label>
+				</div>
+			</div>
+		</g:if>
 	</div>
 	
 	<div class="section row">

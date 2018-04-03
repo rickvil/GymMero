@@ -7,8 +7,10 @@ class ContractedPack {
     Date contractStartDate
     Date contractEndDate
     Integer credit = 0
+    double priceTotal
     double price
     double debt
+    double payment
     boolean free
     String comment
     Integer assistedClasses = 0
@@ -20,6 +22,8 @@ class ContractedPack {
         free(nullable: false)
         comment(nullable: true, size: 0..1000)
         debt(nullable: true)
+        payment(nullable: true)
+        priceTotal(nullable: true)
         assistedClasses(nullable: true, size: 1..2, min: 0, max: 60)
     }
 

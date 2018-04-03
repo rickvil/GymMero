@@ -39,12 +39,14 @@ class ContractedPackController {
             return
         }
 
+        contractedPackInstance.priceTotal = contractedPackInstance.price + contractedPackInstance.debt
         if (contractedPackInstance.hasErrors()) {
             respond contractedPackInstance.errors, view:'create'
             return
         }
 
         contractedPackInstance.save flush:true
+        savePaymentContractedPack(contractedPackInstance)
 
         request.withFormat {
             form multipartForm {
@@ -53,6 +55,35 @@ class ContractedPackController {
             }
             '*' { respond contractedPackInstance, [status: CREATED] }
         }
+    }
+
+    def savePaymentContractedPack(ContractedPack contractedPack){
+        Payment payment = new Payment()
+
+        payment.amount = contractedPack.price
+        payment.dayPayment = new Date()
+        payment.user = contractedPack.user
+        payment.contractedPack = contractedPack
+        payment.comment = "Contrato pack por \$" +
+            contractedPack.priceTotal.toString() + ": pago \$" + contractedPack.price.toString() +
+            ", debe \$" + contractedPack.debt.toString()
+        payment.save flush:true
+    }
+
+    def savePayment(ContractedPack contractedPack){
+        Payment payment = new Payment()
+        payment.amount = contractedPack.payment
+        payment.dayPayment = new Date()
+        payment.user = contractedPack.user
+        payment.contractedPack = contractedPack
+        payment.comment = "Abona deuda" +
+                " - paga: \$" + contractedPack.payment.toString()
+        payment.save flush:true
+
+        contractedPack.price = contractedPack.price + contractedPack.payment
+        contractedPack.debt = contractedPack.debt - contractedPack.payment
+        contractedPack.payment = 0
+        contractedPack.save flush: true
     }
 
     def edit(ContractedPack contractedPackInstance) {
@@ -72,6 +103,10 @@ class ContractedPackController {
         }
 
         contractedPackInstance.save flush:true
+
+        if (contractedPackInstance.payment != 0){
+            savePayment(contractedPackInstance)
+        }
 
         request.withFormat {
             form multipartForm {
@@ -94,6 +129,11 @@ class ContractedPackController {
 
         def assistanceInstanceList = Assistance.findAllByContractedPack(contractedPackInstance)
         assistanceInstanceList.each {
+            it.delete flush:true
+        }
+
+        def paymentList = Payment.findAllByContractedPack(contractedPackInstance)
+        paymentList.each {
             it.delete flush:true
         }
 

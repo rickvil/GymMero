@@ -60,37 +60,49 @@
 										</g:if>
 									</span>
 								</div>
-								<g:if test="${contractedPackInstance?.credit}">
+								%{--<g:if test="${contractedPackInstance?.credit}">--}%
 									<div>
 										<span class="panel-icon">
-											<i class="glyphicon glyphicon-usd"></i>
+											<i class="glyphicon glyphicon-calendar"></i>
 										</span>
 										<span class="panel-title">
 											<g:fieldValue bean="${contractedPackInstance}" field="credit"/>
-											clases - $
-											<g:fieldValue bean="${contractedPackInstance}" field="price"/>
+											clases
 										</span>
 									</div>
-								</g:if>
-								<g:if test="${contractedPackInstance?.free}">
 									<div>
 										<span class="panel-icon">
 											<i class="glyphicon glyphicon-usd"></i>
 										</span>
 										<span class="panel-title">
-												Clases Libres:
-												<g:formatBoolean boolean="${contractedPackInstance.free}" />
-												- $
-												<g:fieldValue bean="${contractedPackInstance}" field="price"/>
+											Precio Total $
+											<g:fieldValue bean="${contractedPackInstance}" field="priceTotal"/>
+											,  Pago $
+											<g:fieldValue bean="${contractedPackInstance}" field="price"/>
+											,  Debe $
+											<g:fieldValue bean="${contractedPackInstance}" field="debt"/>
 										</span>
 									</div>
-								</g:if>
+								%{--</g:if>--}%
+								%{--<g:if test="${contractedPackInstance?.free}">--}%
+									%{--<div>--}%
+										%{--<span class="panel-icon">--}%
+											%{--<i class="glyphicon glyphicon-usd"></i>--}%
+										%{--</span>--}%
+										%{--<span class="panel-title">--}%
+												%{--Clases Libres:--}%
+												%{--<g:formatBoolean boolean="${contractedPackInstance.free}" />--}%
+												%{--- $--}%
+												%{--<g:fieldValue bean="${contractedPackInstance}" field="price"/>--}%
+										%{--</span>--}%
+									%{--</div>--}%
+								%{--</g:if>--}%
 								<div>
 									<span class="panel-icon">
 										<i class="glyphicon glyphicon-calendar"></i>
 									</span>
 									<span class="panel-title">
-										Desde:
+										Valido Desde:
 										<g:if test="${contractedPackInstance?.contractStartDate}">
 											<g:formatDate format="dd-MM-yyyy" date="${contractedPackInstance?.contractStartDate}" />
 										</g:if>
@@ -135,7 +147,7 @@
 							</g:form>
 						</div>
 
-						<div class="col-md-12">
+						<div class="col-md-6">
 							<div class="panel panel-visible" id="spy5">
 								<div class="panel-heading">
 									<div class="panel-title hidden-xs">
@@ -160,6 +172,36 @@
 													<td>${fieldValue(bean: assistanceInstance, field: "authorizedBy")}</td>
 												</tr>
 											</g:each>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="panel panel-visible" id="spy5">
+								<div class="panel-heading">
+									<div class="panel-title hidden-xs">
+										<span class="glyphicon glyphicon-tasks"></span>Pagos Efectuados
+									</div>
+								</div>
+								<div class="panel-body pn">
+									<g:if test="${flash.message}">
+										<div class="message" role="status">${flash.message}</div>
+									</g:if>
+									<table class="table table-striped table-hover display" id="datatable5" cellspacing="0" width="100%">
+										<thead>
+										<tr>
+											<th><g:message code="contractedPack.contractStartDate.label" default="Fecha de asistencia" /></th>
+											<th><g:message code="contractedPack.activity.label" default="Persona que autorizo" /></th>
+										</tr>
+										</thead>
+										<tbody>
+										<g:each in="${assistanceInstanceList}" status="i" var="assistanceInstance">
+											<tr class="${(i % 2) == 0 ? 'even' : 'odd'}" >
+												<td><g:formatDate format="dd-MM-yyyy hh:mm:ss" date="${assistanceInstance?.dateAssistance}" /></td>
+												<td>${fieldValue(bean: assistanceInstance, field: "authorizedBy")}</td>
+											</tr>
+										</g:each>
 										</tbody>
 									</table>
 								</div>
