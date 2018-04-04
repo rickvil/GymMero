@@ -47,8 +47,6 @@ class ReportController {
     }
 
     def assistence(BetweenDateDto betweenDateDto){
-        println("assistence betweenDateDto.fromDate: " + betweenDateDto.fromDate)
-        println("assistence betweenDateDto.untilDate: " + betweenDateDto.untilDate)
         response.setHeader("Content-Disposition", "Attachment;Filename=\"asistencias_lista_socios.xls\"")
 
         List<Assistance> assistances = Assistance.findAllByDateAssistanceBetween(betweenDateDto.fromDate, betweenDateDto.untilDate, [sort: "dateAssistance", order: "desc"])
@@ -67,16 +65,16 @@ class ReportController {
     }
 
     def contracted(BetweenDateDto betweenDateDto){
-        println("contracted betweenDateDto.fromDate: " + betweenDateDto.fromDate)
-        println("contracted betweenDateDto.untilDate: " + betweenDateDto.untilDate)
+        response.setHeader("Content-Disposition", "Attachment;Filename=\"pack_contratados_lista_socios.xls\"")
 
-        response.setHeader("Content-Disposition", "Attachment;Filename=\"asistencia.xls\"")
-
-        List<Assistance> employees = Assistance.getAll()
-        InputStream is = assetResourceLocator.findAssetForURI("object_collection_template.xls").inputStream
+        List<ContractedPack> contractedPackList= ContractedPack.findAllByContractStartDateBetween(betweenDateDto.fromDate, betweenDateDto.untilDate, [sort: "contractStartDate", order: "desc"])
+        InputStream is = assetResourceLocator.findAssetForURI("contracted_pack_list_user_template.xls").inputStream
         def os = response.outputStream
         Context context = new Context()
-        context.putVar("employees", employees)
+        context.putVar("contractedPackList", contractedPackList)
+        context.putVar("totalUser", contractedPackList.size())
+        context.putVar("fromDate", new SimpleDateFormat("dd-MM-yyyy").format(betweenDateDto.fromDate))
+        context.putVar("untilDate", new SimpleDateFormat("dd-MM-yyyy").format(betweenDateDto.untilDate))
         JxlsHelper.getInstance().processTemplate(is, os, context)
 
         response.setContentType("application/vnd.ms-excel")
