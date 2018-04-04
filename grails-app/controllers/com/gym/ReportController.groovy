@@ -49,7 +49,7 @@ class ReportController {
     def assistence(BetweenDateDto betweenDateDto){
         response.setHeader("Content-Disposition", "Attachment;Filename=\"asistencias_lista_socios.xls\"")
 
-        List<Assistance> assistances = Assistance.findAllByDateAssistanceBetween(betweenDateDto.fromDate, betweenDateDto.untilDate, [sort: "dateAssistance", order: "desc"])
+        List<Assistance> assistances = Assistance.findAllByDateAssistanceBetween(DateUtils.trimTime(betweenDateDto.fromDate), DateUtils.endOfTheDay(betweenDateDto.untilDate), [sort: "dateAssistance", order: "desc"])
         InputStream is = assetResourceLocator.findAssetForURI("assistances_list_user_template.xls").inputStream
         def os = response.outputStream
         Context context = new Context()
@@ -67,12 +67,33 @@ class ReportController {
     def contracted(BetweenDateDto betweenDateDto){
         response.setHeader("Content-Disposition", "Attachment;Filename=\"pack_contratados_lista_socios.xls\"")
 
-        List<ContractedPack> contractedPackList= ContractedPack.findAllByContractStartDateBetween(betweenDateDto.fromDate, betweenDateDto.untilDate, [sort: "contractStartDate", order: "desc"])
+        List<ContractedPack> contractedPackList = ContractedPack.findAllByContractStartDateBetween(DateUtils.trimTime(betweenDateDto.fromDate), DateUtils.endOfTheDay(betweenDateDto.untilDate), [sort: "contractStartDate", order: "desc"])
         InputStream is = assetResourceLocator.findAssetForURI("contracted_pack_list_user_template.xls").inputStream
         def os = response.outputStream
         Context context = new Context()
         context.putVar("contractedPackList", contractedPackList)
         context.putVar("totalUser", contractedPackList.size())
+        context.putVar("fromDate", new SimpleDateFormat("dd-MM-yyyy").format(betweenDateDto.fromDate))
+        context.putVar("untilDate", new SimpleDateFormat("dd-MM-yyyy").format(betweenDateDto.untilDate))
+        JxlsHelper.getInstance().processTemplate(is, os, context)
+
+        response.setContentType("application/vnd.ms-excel")
+        response.outputStream.flush()
+        response.outputStream.close()
+    }
+
+    def payment(BetweenDateDto betweenDateDto){
+        response.setHeader("Content-Disposition", "Attachment;Filename=\"pagos.xls\"")
+        Date starDate = DateUtils.trimTime(betweenDateDto.fromDate)
+        Date endDate = DateUtils.endOfTheDay(betweenDateDto.untilDate)
+        println("starDate: " + starDate)
+        println("endDate: " + endDate)
+        List<Payment> payments = Payment.findAllByDayPaymentBetween(starDate, endDate, [sort: "dayPayment", order: "desc"])
+        InputStream is = assetResourceLocator.findAssetForURI("payments_template.xls").inputStream
+        def os = response.outputStream
+        Context context = new Context()
+        context.putVar("payments", payments)
+        context.putVar("totalPayments", payments.size())
         context.putVar("fromDate", new SimpleDateFormat("dd-MM-yyyy").format(betweenDateDto.fromDate))
         context.putVar("untilDate", new SimpleDateFormat("dd-MM-yyyy").format(betweenDateDto.untilDate))
         JxlsHelper.getInstance().processTemplate(is, os, context)
