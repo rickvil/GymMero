@@ -49,60 +49,58 @@
 									<img src="${resource(file:'user.png')}"/>
 								</div>
 								<div class="col-md-6">
-									<div>
-										<span class="panel-icon">
-											<i class="glyphicon glyphicon-calendar"></i>
-										</span>
-										<span class="panel-title">
-											<g:if test="${userInstance?.birthday}">
-												<g:formatDate format="dd-MM-yyyy" date="${userInstance?.birthday}" />
-											</g:if>
-											<g:else>
-												----
-											</g:else>
-										</span>
-									</div>
-									<div>
-										<span class="panel-icon">
-											<i class="glyphicon glyphicon-phone-alt"></i>
-										</span>
-										<span class="panel-title">
-											<g:if test="${userInstance?.phoneNumber}">
-												<g:fieldValue bean="${userInstance}" field="phoneNumber"/>
-											</g:if>
-											<g:else>
-												----
-											</g:else>
-										</span>
-									</div>
-									<div>
-										<span class="panel-icon">
-											<i class="glyphicon glyphicon-envelope"></i>
-										</span>
-										<span class="panel-title">
-											<g:if test="${userInstance?.email}">
-												<g:fieldValue bean="${userInstance}" field="email"/>
-											</g:if>
-											<g:else>
-												----
-											</g:else>
-										</span>
-									</div>
-									<div>
-										<span class="panel-icon">
-											<i class="glyphicon glyphicon-user"></i>
-										</span>
-										<span class="panel-title">
-											<g:if test="${userInstance?.sex}">
-												<g:fieldValue bean="${userInstance}" field="sex"/>
-											</g:if>
-										</span>
-									</div>
+								<div>
+									<span class="panel-icon">
+										<i class="glyphicon glyphicon-calendar"></i>
+									</span>
+									<span class="panel-title">
+										<g:if test="${userInstance?.birthday}">
+											<g:formatDate format="dd-MM-yyyy" date="${userInstance?.birthday}" />
+										</g:if>
+										<g:else>
+											----
+										</g:else>
+									</span>
+								</div>
+								<div>
+									<span class="panel-icon">
+										<i class="glyphicon glyphicon-phone-alt"></i>
+									</span>
+									<span class="panel-title">
+										<g:if test="${userInstance?.phoneNumber}">
+											<g:fieldValue bean="${userInstance}" field="phoneNumber"/>
+										</g:if>
+										<g:else>
+											----
+										</g:else>
+									</span>
+								</div>
+								<div>
+									<span class="panel-icon">
+										<i class="glyphicon glyphicon-envelope"></i>
+									</span>
+									<span class="panel-title">
+										<g:if test="${userInstance?.email}">
+											<g:fieldValue bean="${userInstance}" field="email"/>
+										</g:if>
+										<g:else>
+											----
+										</g:else>
+									</span>
+								</div>
+								<div>
+									<span class="panel-icon">
+										<i class="glyphicon glyphicon-user"></i>
+									</span>
+									<span class="panel-title">
+										<g:if test="${userInstance?.sex}">
+											<g:fieldValue bean="${userInstance}" field="sex"/>
+										</g:if>
+									</span>
+								</div>
 								</div>
 							</div>
 						</div>
-
-
 
 						<div class="panel-footer text-right">
 							<g:form url="[resource:userInstance, action:'delete']" method="DELETE">
@@ -138,21 +136,17 @@
 
 											<th><g:message code="contractedPack.typeActivity.label" default="Tipo de Actividad" /></th>
 
-											%{--<g:sortableColumn property="barCode" title="${message(code: 'contractedPack.barCode.label', default: 'Código de Barras')}" />--}%
+											<th><g:message code="contractedPack.credit.label" default="Cant. Clases" /></th>
 
-											<g:sortableColumn property="credit" title="${message(code: 'contractedPack.credit.label', default: 'Cant. Clases')}" />
+											<th><g:message code="contractedPack.assistedClasses.label" default="Clases Asistidas" /></th>
 
-											<g:sortableColumn property="assistedClasses" title="${message(code: 'contractedPack.assistedClasses.label', default: 'Clases Asistidas')}" />
+											<th><g:message code="contractedPack.remainingClasses.label" default="Clases Restan" /></th>
 
-											<g:sortableColumn property="remainingClasses" title="${message(code: 'contractedPack.remainingClasses.label', default: 'Clases Restan')}" />
+											<th><g:message code="contractedPack.price.label" default="Pago" /></th>
 
-											%{--<g:sortableColumn property="free" title="${message(code: 'contractedPack.free.label', default: 'Libre')}" />--}%
+											<th><g:message code="contractedPack.debt.label" default="Adeuda" /></th>
 
-											<g:sortableColumn property="price" title="${message(code: 'contractedPack.price.label', default: 'Pago')}" />
-
-											<g:sortableColumn property="debt" title="${message(code: 'contractedPack.debt.label', default: 'Adeuda')}" />
-
-											<g:sortableColumn property="contractEndDate" title="${message(code: 'contractedPack.contractEndDate.label', default: 'F.Vencimiento')}" />
+											<th><g:message code="contractedPack.contractEndDate.label" default="F.Vencimiento" /></th>
 
 										</tr>
 
