@@ -55,7 +55,7 @@
                     </h1>
                 </g:if>
                 <br/>
-                <h1 class="textColor">Tienes disponible ${contractedPack.remainingClasses} clases</h1>
+                <h1 class="textColor">Tienes disponible ${contractedPack.remainingClasses} clases hasta el <g:formatDate format="dd-MM-yyyy" date="${contractedPack.contractEndDate}"/> </h1>
 
                 <g:if test="${contractedPack.debt != 0}">
                     <h1 class="textColor" style="color: red !important;">Tienes una deuda de ${contractedPack.debt} $</h1>

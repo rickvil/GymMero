@@ -46,21 +46,24 @@
 								</h2>
 								<div class="section row">
 								</div>
-								<div>
-									<span class="panel-icon">
-										<i class="glyphicon glyphicon-shopping-cart"></i>
-									</span>
-									<span class="panel-title">
-										<g:if test="${contractedPackInstance?.activity}">
-											<g:fieldValue bean="${contractedPackInstance?.activity}" field="title"/>
-										</g:if>
-										-
-										<g:if test="${contractedPackInstance?.typeActivity}">
-											<g:fieldValue bean="${contractedPackInstance?.typeActivity}" field="title"/>
-										</g:if>
-									</span>
+								<div class="col-md-3">
+									<img src="${resource(file:'credential.jpg')}"/>
 								</div>
-								%{--<g:if test="${contractedPackInstance?.credit}">--}%
+								<div class="col-md-9">
+									<div>
+										<span class="panel-icon">
+											<i class="glyphicon glyphicon-shopping-cart"></i>
+										</span>
+										<span class="panel-title">
+											<g:if test="${contractedPackInstance?.activity}">
+												<g:fieldValue bean="${contractedPackInstance?.activity}" field="title"/>
+											</g:if>
+											-
+											<g:if test="${contractedPackInstance?.typeActivity}">
+												<g:fieldValue bean="${contractedPackInstance?.typeActivity}" field="title"/>
+											</g:if>
+										</span>
+									</div>
 									<div>
 										<span class="panel-icon">
 											<i class="glyphicon glyphicon-calendar"></i>
@@ -88,58 +91,45 @@
 											<g:fieldValue bean="${contractedPackInstance}" field="debt"/>
 										</span>
 									</div>
-								%{--</g:if>--}%
-								%{--<g:if test="${contractedPackInstance?.free}">--}%
-									%{--<div>--}%
-										%{--<span class="panel-icon">--}%
-											%{--<i class="glyphicon glyphicon-usd"></i>--}%
-										%{--</span>--}%
-										%{--<span class="panel-title">--}%
-												%{--Clases Libres:--}%
-												%{--<g:formatBoolean boolean="${contractedPackInstance.free}" />--}%
-												%{--- $--}%
-												%{--<g:fieldValue bean="${contractedPackInstance}" field="price"/>--}%
-										%{--</span>--}%
-									%{--</div>--}%
-								%{--</g:if>--}%
-								<div>
-									<span class="panel-icon">
-										<i class="glyphicon glyphicon-calendar"></i>
-									</span>
-									<span class="panel-title">
-										Valido Desde:
-										<g:if test="${contractedPackInstance?.contractStartDate}">
-											<g:formatDate format="dd-MM-yyyy" date="${contractedPackInstance?.contractStartDate}" />
-										</g:if>
-										- Hasta:
-										<g:if test="${contractedPackInstance?.contractEndDate}">
-											<g:formatDate format="dd-MM-yyyy" date="${contractedPackInstance?.contractEndDate}" />
-										</g:if>
-									</span>
-								</div>
-								<div>
-									<span class="panel-icon">
-										<i class="glyphicon glyphicon-barcode"></i>
-									</span>
-									<span class="panel-title">
-										Código de Barra:
-										<g:if test="${contractedPackInstance?.contractStartDate}">
-											<g:fieldValue bean="${contractedPackInstance}" field="barCode"/>
-										</g:if>
-									</span>
-								</div>
-								<div>
-									<span class="panel-icon">
-										<i class="glyphicon glyphicon-comment"></i>
-									</span>
-									<span class="panel-title">
-										<g:if test="${contractedPackInstance?.comment}">
-											<g:fieldValue bean="${contractedPackInstance}" field="comment"/>
-										</g:if>
-										<g:else>
-											Sin comentarios
-										</g:else>
-									</span>
+									<div>
+										<span class="panel-icon">
+											<i class="glyphicon glyphicon-calendar"></i>
+										</span>
+										<span class="panel-title">
+											Valido Desde:
+											<g:if test="${contractedPackInstance?.contractStartDate}">
+												<g:formatDate format="dd-MM-yyyy" date="${contractedPackInstance?.contractStartDate}" />
+											</g:if>
+											- Hasta:
+											<g:if test="${contractedPackInstance?.contractEndDate}">
+												<g:formatDate format="dd-MM-yyyy" date="${contractedPackInstance?.contractEndDate}" />
+											</g:if>
+										</span>
+									</div>
+									<div>
+										<span class="panel-icon">
+											<i class="glyphicon glyphicon-barcode"></i>
+										</span>
+										<span class="panel-title">
+											Código de Barra:
+											<g:if test="${contractedPackInstance?.contractStartDate}">
+												<g:fieldValue bean="${contractedPackInstance}" field="barCode"/>
+											</g:if>
+										</span>
+									</div>
+									<div>
+										<span class="panel-icon">
+											<i class="glyphicon glyphicon-comment"></i>
+										</span>
+										<span class="panel-title">
+											<g:if test="${contractedPackInstance?.comment}">
+												<g:fieldValue bean="${contractedPackInstance}" field="comment"/>
+											</g:if>
+											<g:else>
+												Sin comentarios
+											</g:else>
+										</span>
+									</div>
 								</div>
 							</div>
 						</div>

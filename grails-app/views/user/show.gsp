@@ -45,54 +45,59 @@
 								</h2>
 								<div class="section row">
 								</div>
-								<div>
-									<span class="panel-icon">
-										<i class="glyphicon glyphicon-calendar"></i>
-									</span>
-									<span class="panel-title">
-										<g:if test="${userInstance?.birthday}">
-											<g:formatDate format="dd-MM-yyyy" date="${userInstance?.birthday}" />
-										</g:if>
-										<g:else>
-											----
-										</g:else>
-									</span>
+								<div class="col-md-6">
+									<img src="${resource(file:'user.png')}"/>
 								</div>
-								<div>
-									<span class="panel-icon">
-										<i class="glyphicon glyphicon-phone-alt"></i>
-									</span>
-									<span class="panel-title">
-										<g:if test="${userInstance?.phoneNumber}">
-											<g:fieldValue bean="${userInstance}" field="phoneNumber"/>
-										</g:if>
-										<g:else>
-											----
-										</g:else>
-									</span>
-								</div>
-								<div>
-									<span class="panel-icon">
-										<i class="glyphicon glyphicon-envelope"></i>
-									</span>
-									<span class="panel-title">
-										<g:if test="${userInstance?.email}">
-											<g:fieldValue bean="${userInstance}" field="email"/>
-										</g:if>
-										<g:else>
-											----
-										</g:else>
-									</span>
-								</div>
-								<div>
-									<span class="panel-icon">
-										<i class="glyphicon glyphicon-user"></i>
-									</span>
-									<span class="panel-title">
-										<g:if test="${userInstance?.sex}">
-											<g:fieldValue bean="${userInstance}" field="sex"/>
-										</g:if>
-									</span>
+								<div class="col-md-6">
+									<div>
+										<span class="panel-icon">
+											<i class="glyphicon glyphicon-calendar"></i>
+										</span>
+										<span class="panel-title">
+											<g:if test="${userInstance?.birthday}">
+												<g:formatDate format="dd-MM-yyyy" date="${userInstance?.birthday}" />
+											</g:if>
+											<g:else>
+												----
+											</g:else>
+										</span>
+									</div>
+									<div>
+										<span class="panel-icon">
+											<i class="glyphicon glyphicon-phone-alt"></i>
+										</span>
+										<span class="panel-title">
+											<g:if test="${userInstance?.phoneNumber}">
+												<g:fieldValue bean="${userInstance}" field="phoneNumber"/>
+											</g:if>
+											<g:else>
+												----
+											</g:else>
+										</span>
+									</div>
+									<div>
+										<span class="panel-icon">
+											<i class="glyphicon glyphicon-envelope"></i>
+										</span>
+										<span class="panel-title">
+											<g:if test="${userInstance?.email}">
+												<g:fieldValue bean="${userInstance}" field="email"/>
+											</g:if>
+											<g:else>
+												----
+											</g:else>
+										</span>
+									</div>
+									<div>
+										<span class="panel-icon">
+											<i class="glyphicon glyphicon-user"></i>
+										</span>
+										<span class="panel-title">
+											<g:if test="${userInstance?.sex}">
+												<g:fieldValue bean="${userInstance}" field="sex"/>
+											</g:if>
+										</span>
+									</div>
 								</div>
 							</div>
 						</div>
