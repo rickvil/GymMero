@@ -74,7 +74,7 @@
 											clases,
 											Asistio a:
 											<g:fieldValue bean="${contractedPackInstance}" field="assistedClasses"/>
-											, le quedan disponible:
+											,le quedan disponible:
 											<g:fieldValue bean="${contractedPackInstance}" field="remainingClasses"/>
 										</span>
 									</div>
