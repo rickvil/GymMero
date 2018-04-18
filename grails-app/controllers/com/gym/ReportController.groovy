@@ -72,6 +72,11 @@ class ReportController {
         Date endDate = DateUtils.endOfTheDay(betweenDateDto.untilDate)
 
         List<ContractedPack> contractedPackList = ContractedPack.findAllByContractStartDateBetween(starDate, endDate, [sort: "contractStartDate", order: "desc"])
+
+//        def dataGroupActivity = contractedPackList.groupBy({ pack -> pack.activity.title })
+//        def dataGroupSex = contractedPackList.groupBy({ pack -> pack.user.sex })
+//        def dataGroupOldYear = contractedPackList.groupBy({ pack -> pack.user.edad })
+
         InputStream is = assetResourceLocator.findAssetForURI("contracted_pack_list_user_template.xls").inputStream
         def os = response.outputStream
         Context context = new Context()
@@ -79,6 +84,10 @@ class ReportController {
         context.putVar("totalUser", contractedPackList.size())
         context.putVar("fromDate", new SimpleDateFormat("dd-MM-yyyy").format(betweenDateDto.fromDate))
         context.putVar("untilDate", new SimpleDateFormat("dd-MM-yyyy").format(betweenDateDto.untilDate))
+
+//        context.putVar("dataGroupActivity", dataGroupActivity)
+//        context.putVar("dataGroupSex", dataGroupSex)
+//        context.putVar("dataGroupOldYear", dataGroupOldYear)
         JxlsHelper.getInstance().processTemplate(is, os, context)
 
         response.setContentType("application/vnd.ms-excel")

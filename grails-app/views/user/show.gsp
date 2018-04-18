@@ -21,7 +21,7 @@
 		<section id="content" class="table-layout animated fadeIn">
 			<div class="tray tray-center">
 				<g:if test="${flash.message}">
-					<div class="message" role="status">${flash.message}</div>
+					<div class="message" role="status" style="color: red; font-size: 25px; font-weight: bold;">${flash.message}</div>
 				</g:if>
 				<div class="admin-form theme-primary mw1000 center-block theme-danger" style="padding-bottom: 175px;">
 					<div class="panel heading-border panel-danger">
