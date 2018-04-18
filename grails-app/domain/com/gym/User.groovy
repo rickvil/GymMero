@@ -13,7 +13,7 @@ class User {
     boolean active = true
 
     static constraints = {
-        dni(blank: false, unique: true)
+        dni(blank: false, unique: true, matches: "^[^.]*\$")
         name(nullable: false, size: 0..50)
         lastName(nullable: false, size: 0..50)
         birthday(nullable: true, max: new Date())
