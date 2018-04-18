@@ -19,7 +19,7 @@
 
 		<div id="create-contractedPack" class="content scaffold-create" role="main">
 			<g:if test="${flash.message}">
-			<div class="message" role="status" style="color: red; font-size: 25px; font-weight: bold;">${flash.message}</div>
+			<div class="message" role="status" style="color: blue; font-size: 25px; font-weight: bold;">${flash.message}</div>
 			</g:if>
 			<g:hasErrors bean="${contractedPackInstance}">
 			<ul class="errors" role="alert">

@@ -18,7 +18,7 @@
 		<div id="list-contractedPack" class="content scaffold-list" role="main">
 			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
-				<div class="message" role="status" style="color: red; font-size: 25px; font-weight: bold;">${flash.message}</div>
+				<div class="message" role="status" style="color: blue; font-size: 25px; font-weight: bold;">${flash.message}</div>
 			</g:if>
 			<table>
 			<thead>
