@@ -123,9 +123,6 @@
 									</div>
 								</div>
 								<div class="panel-body pn">
-									<g:if test="${flash.message}">
-										<div class="message" role="status">${flash.message}</div>
-									</g:if>
 									<table class="table table-striped table-hover display" id="datatable5" cellspacing="0" width="100%">
 										<thead>
 										<tr>
