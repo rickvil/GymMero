@@ -10,5 +10,7 @@ class Payment {
 
 
     static constraints = {
+        contractedPack nullable: true
+        user nullable: true
     }
 }

@@ -914,6 +914,12 @@
 					<a href="${createLink(uri: '/report')}">
 						<span class="fa fa-user"></span>
 						<span class="sidebar-title">Informes</span>
+					</a>
+				</li>
+				<li>
+					<a href="${createLink(uri: '/accountant')}">
+						<span class="fa fa-user"></span>
+						<span class="sidebar-title">Contabilidad</span>
 						<span class="sidebar-title-tray">
 							<span class="label label-xs bg-primary">New</span>
 						</span>
