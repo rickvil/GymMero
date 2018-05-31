@@ -58,8 +58,8 @@
 							</div>
 						</fieldset>
 						<div class="panel-footer text-right">
-							<g:actionSubmit class="button btn-primary btn-danger" action="inputMoney" value="${message(code: 'default.button.pack.contracted.report', default: 'Registrar Ingreso')}" />
-							<g:actionSubmit class="button btn-primary btn-danger" action="outputMoney" value="${message(code: 'default.button.pack.contracted.report', default: 'Registrar Salida')}" />
+							<g:actionSubmit class="button btn-primary btn-danger" action="inputMoney" value="${message(code: 'default.button.pack.contracted.report', default: 'Registrar Como Ingreso')}" />
+							<g:actionSubmit class="button btn-primary btn-danger" action="outputMoney" value="${message(code: 'default.button.pack.contracted.report', default: 'Registrar Como Salida')}" />
 						</div>
 					</g:form>
 				</div>
